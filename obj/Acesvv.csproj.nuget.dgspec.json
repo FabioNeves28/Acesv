@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\Acesvv.csproj": {}
+    "c:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\Acesvv.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\Acesvv.csproj": {
+    "c:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\Acesvv.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\Acesvv.csproj",
+        "projectUniqueName": "c:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\Acesvv.csproj",
         "projectName": "Acesvv",
-        "projectPath": "C:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\Acesvv.csproj",
+        "projectPath": "c:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\Acesvv.csproj",
         "packagesPath": "C:\\Users\\Fabio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\obj\\",
+        "outputPath": "c:\\Users\\Fabio\\source\\repos\\Acesvv\\Acesvv\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
