@@ -1,6 +1,3 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +13,23 @@
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
     <meta name="theme-color" content="#a37fdf">
     <meta property="og:title" content="Registrar">
     <meta property="og:type" content="website">
@@ -75,32 +89,6 @@
                   <br>
                   <span style="font-size: 1.5rem;">Lista com todas as escolas disponíveis:</span>
                   <br>
-                  <form asp-area="ViewEscola" asp-controller="ViewEscola" asp-action="Index" method="get">
-        <div class="form-group">
-            <label for="escolaSelect">Escolha uma escola:</label>
-            <select class="form-control" id="escolaSelect" name="nomeEscolaEscolhida" onchange="redirecionarParaEscola(this)">
-                <option value="">Selecione uma escola</option>
-                @foreach (var escola in ViewBag.Escolas)
-                {
-                    <option value="@escola.Text">@escola.Text</option>
-                }
-            </select>
-        </div>
-       aaaaa
-    </form>
-
-    <script>
-        function redirecionarParaEscola(selectElement) {
-            var nomeEscolaEscolhida = selectElement.value;
-            if (nomeEscolaEscolhida !== "") {
-                window.location.href = `/ViewEscola/Index?nomeEscolaEscolhida=${encodeURIComponent(nomeEscolaEscolhida)}`;
-            }
-        }
-    </script>
-
-
-
-</div>
                 </h1>
                 <div class="u-expanded-width-xs u-list u-list-1">
                   <div class="u-repeater u-repeater-1"></div>
@@ -517,6 +505,3 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
     </section>
   
 </body></html>
-
-    
-
