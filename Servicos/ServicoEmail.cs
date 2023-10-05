@@ -9,7 +9,7 @@ namespace Mvc_ConfRec.Servicos
     {
         public static async Task EnviaEmailAsync(string email, string assunto, string mensagem)
         {
-            var apiKey = "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"; // Substitua pelo seu API Key do SendGrid
+            var apiKey = "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"; // Substitua pelo seu API Key do SendGrid
             var client = new SendGridClient(apiKey);
 
             var from = new EmailAddress("contato@acesv.com.br", "Acesv Contato");
