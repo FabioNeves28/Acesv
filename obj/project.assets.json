@@ -11316,11 +11316,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Fabio\\Downloads\\acesv\\acesv\\Acesvv.csproj",
+      "projectUniqueName": "C:\\Users\\Fabio\\Downloads\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesvv.csproj",
       "projectName": "Acesvv",
-      "projectPath": "c:\\Users\\Fabio\\Downloads\\acesv\\acesv\\Acesvv.csproj",
+      "projectPath": "C:\\Users\\Fabio\\Downloads\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesvv.csproj",
       "packagesPath": "C:\\Users\\Fabio\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Fabio\\Downloads\\acesv\\acesv\\obj\\",
+      "outputPath": "C:\\Users\\Fabio\\Downloads\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
