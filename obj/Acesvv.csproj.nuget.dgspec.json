@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fabio\\Downloads\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesvv.csproj": {}
+    "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\Acesvv.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fabio\\Downloads\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesvv.csproj": {
+    "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\Acesvv.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fabio\\Downloads\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesvv.csproj",
+        "projectUniqueName": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\Acesvv.csproj",
         "projectName": "Acesvv",
-        "projectPath": "C:\\Users\\Fabio\\Downloads\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesvv.csproj",
+        "projectPath": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\Acesvv.csproj",
         "packagesPath": "C:\\Users\\Fabio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fabio\\Downloads\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\obj\\",
+        "outputPath": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",

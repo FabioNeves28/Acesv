@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ksIC7Rr+IKMx7MIMOnCzXNs0xGmR8s8IvC/M4MNp1A7s8Vhsu5gMUjFJoG/0mBNgd/HpWavLP3wJUPGvdPIamg==",
+  "dgSpecHash": "nDW1CEN8D+RMSr1V4qHGBM4USSuT89wPzmkHjZGM56K+h0zDP2AXQi39ZhtwHKA0k+etVIaRr70dMPUIsuNARQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fabio\\Downloads\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesv-94ed0e9f018251930679a365e8db80237bc93f94\\Acesvv.csproj",
+  "projectFilePath": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\Acesvv.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fabio\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\Fabio\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
