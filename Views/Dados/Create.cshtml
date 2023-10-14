@@ -346,7 +346,7 @@ inputElement.addEventListener("input", function () {
     <label style="font-size: 14px;">Telefone</label>
      <input oninput="mascara(this, 'tel')" type="text" placeholder="Ex.: (13)12345-6789">
     </div>
-    <input type="button" class="next action-button" value="Próximo">
+    <input type="button" class="next action-button" value="Próximo" id="proximo1">
   </fieldset>
   <!-- parte 2 -->
   <fieldset style="display: none; left: 50%; opacity: 0; transform: scale(1); position: absolute;">
@@ -461,26 +461,29 @@ inputElement.addEventListener("input", function () {
         </main>
     </div>
 
-    <footer b-k9tty6e7ao="" class="border-top footer text-muted">
-        <div b-k9tty6e7ao="" class="container" bis_skin_checked="1">
-            © 2023 - Acesvv - <a href="/Home/Privacy">Privacy</a>
-        </div>
-    </footer>
+  
     <script src="/lib/jquery/dist/jquery.min.js"></script>
     <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
     
   <script>// Suponha que você tenha um botão "previous" com o ID "previousButton"
-const previousButton = document.getElementById("previousButton");
+const previousButton = document.getElementById("proximo1");
+const footer = document.getElementById("footer"); // Adicione o ID "footer" ao seu elemento
 
-// Suponha que o rodapé tenha uma classe "footer" para identificação
-const footer = document.querySelector(".footer");
+let isFooterExpanded = false; // Variável para controlar o estado do rodapé
 
-// Adicione um ouvinte de evento para o botão "previous"
 previousButton.addEventListener("click", () => {
-  // Aqui, você pode ajustar a posição do rodapé conforme necessário
-  footer.style.position = "relative"; // Ou use "static" se for apropriado
+  if (!isFooterExpanded) {
+    // Se o rodapé não estiver expandido, aumente a altura em 140%
+    footer.style.height = "140%";
+  } else {
+    // Caso contrário, restaure a altura normal
+    footer.style.height = "130%"; // Ou o valor normal desejado
+  }
+
+  isFooterExpanded = !isFooterExpanded; // Inverte o estado do rodapé
 });
+
 </script>
 
 
