@@ -329,16 +329,17 @@ inputElement.addEventListener("input", function () {
     <h3 class="fs-subtitle">Digite os dados solicitados abaixo</h3>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Nome Completo</label>
-    <input type="text" placeholder="Nome Completo">
+    <input type="text" placeholder="Nome Completo" name="NomeCompleto">
+    <span class="text-danger field-validation-valid" data-valmsg-for="NomeCompleto" data-valmsg-replace="true"></span>
      </div>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Apelido</label>
-    <input type="text" placeholder="Ex.: Tio Fulano">
+    <input type="text" placeholder="Ex.: Tio Fulano" name="Apelido">
     <span class="text-danger field-validation-valid" data-valmsg-for="Apelido" data-valmsg-replace="true"></span>
   </div>
   <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">CPF</label>
-    <input type="text" placeholder="Ex.: 123.456.789-01" readonly="" value=@CpfUser>
+                    <input type="text" placeholder="Ex.: 123.456.789-01" readonly="" value=@CpfUser name="Cpf">
     <span class="text-danger field-validation-valid" data-valmsg-for="Cpf" data-valmsg-replace="true"></span>
   </div>
     <div class="form-group" bis_skin_checked="1">
@@ -348,7 +349,7 @@ inputElement.addEventListener("input", function () {
 </div>
 <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Telefone</label>
-     <input oninput="mascara(this, 'tel')" type="text" placeholder="Ex.: (13)12345-6789">
+     <input oninput="mascara(this, 'tel')" type="text" placeholder="Ex.: (13)12345-6789" name="Telefone">
     </div>
     <input type="button" class="next action-button" value="Próximo" id="proximo1">
   </fieldset>
@@ -385,27 +386,27 @@ inputElement.addEventListener("input", function () {
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Veículo</label>
     <input type="text" placeholder="Ex.: Sprinter">
-    <span class="text-danger field-validation-valid" data-valmsg-for="Veiculo" data-valmsg-replace="true"></span>
+    <span class="text-danger field-validation-valid" data-valmsg-for="Veiculo" data-valmsg-replace="true" name="Veiculo"></span>
   </div>
     <div class="form-group" bis_skin_checked="1">
   </div>
     <label style="font-size: 14px;">Prefixo</label>
     <input type="text" placeholder="Número da Van" oninput="mascara(this,'prefixo')">
-    <span class="text-danger field-validation-valid" data-valmsg-for="Prefixo" data-valmsg-replace="true"></span>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Prefixo" data-valmsg-replace="true" name="Prefixo"></span>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Bairros</label>
     <textarea name="address" placeholder="Digite os bairro que você faz separados por virgula"></textarea>
-    <span class="text-danger field-validation-valid" data-valmsg-for="Bairros" data-valmsg-replace="true"></span>
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Bairros" data-valmsg-replace="true" name="Bairros"></span>
   </div>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Ano do Veículo</label>
-    <input type="text" placeholder="Ex.:2015 " maxlength="4" oninput="mascara(this,'numeroInput')">
-    <span class="text-danger field-validation-valid" data-valmsg-for="Ano" data-valmsg-replace="true"></span>
+                        <input type="text" placeholder="Ex.:2015 " maxlength="4" oninput="mascara(this,'numeroInput')" name="Ano">
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Ano" data-valmsg-replace="true" ></span>
   </div>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Número da CNH</label>
-    <input type="text" placeholder="Insira sua CNH" oninput="mascara(this,'cnh')">
-    <span class="text-danger field-validation-valid" data-valmsg-for="Cnh" data-valmsg-replace="true"></span>
+                        <input type="text" placeholder="Insira sua CNH" oninput="mascara(this,'cnh')" name="Cnh">
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Cnh" data-valmsg-replace="true"></span>
   </div>
    <div class="form-group">
                <label style="font-size: 14px;">Categoria</label>
@@ -421,9 +422,9 @@ inputElement.addEventListener("input", function () {
             </div>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Data de validade da CNH</label>
-    <input oninput="mascara(this, 'data')" id="campo3" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="data_nascimento" maxlength="10">
-  </div>
+    <input oninput="mascara(this, 'data')" id="campo3" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="Validade" maxlength="10">
     <span class="text-danger field-validation-valid" data-valmsg-for="Validade" data-valmsg-replace="true"></span>
+  </div>
     <input type="button" name="previous" class="previous action-button" value="Anterior">
     <input type="button" name="next" class="next action-button" value="Próximo">
   </fieldset>
@@ -450,7 +451,7 @@ inputElement.addEventListener("input", function () {
   <input type="checkbox" id="complementoCheckbox">
   <div class="form-group" id="complementoDiv" style="display: none;" bis_skin_checked="1">
     <label style="font-size: 14px;">Complemento</label>
-    <input type="text" name="phone" placeholder="Ex.: Apto 00">
+                    <input type="text" name="Complemento" placeholder="Ex.: Apto 00" >
     <span class="text-danger field-validation-valid" data-valmsg-for="Complemento" data-valmsg-replace="true"></span>
   </div>
     <input type="button" name="previous" class="previous action-button" value="Previous">

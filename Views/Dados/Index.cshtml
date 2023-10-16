@@ -88,6 +88,9 @@
     <thead>
         <tr>
             <th>
+                Nome Completo
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Apelido)
             </th>
             <th>
@@ -141,6 +144,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomeCompleto)
+                    </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Apelido)
             </td>

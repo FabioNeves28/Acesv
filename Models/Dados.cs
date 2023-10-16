@@ -1,4 +1,4 @@
-﻿using Acesvv.Areas.Identity.Data;
+using Acesvv.Areas.Identity.Data;
 using Acesvv.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
@@ -18,6 +18,7 @@ namespace Acesv.Models
   
         public int Id { get; set; }
         public List<int> EscolaId { get; set; }
+        public string NomeCompleto { get; set; }
         public string Apelido { get; set; }
         public string Cpf { get; set; }
         public DateTime  Data_Nascimento { get; set; }
