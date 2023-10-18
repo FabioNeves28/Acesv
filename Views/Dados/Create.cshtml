@@ -322,38 +322,59 @@ inputElement.addEventListener("input", function () {
     <li class="">Informações do Veiculo</li>
     <li class="">Endereço</li>
   </ul>
+            <script type="text/javascript">
+                function valida_form() {
+                    const nomeCompleto = document.getElementById("nomeCompleto").value;
+                    if (nomeCompleto === "") {
+                        alert('Por favor, preencha o campo Nome Completo');
+                        document.getElementById("nomeCompleto").focus();
+                        // Role para o fieldset com id "form1"
+                        const fieldsetForm1 = document.getElementById("form1");
+                        fieldsetForm1.scrollIntoView({ behavior: "smooth" });
+                        return false;
+                    } else {
+                        // Aqui você pode adicionar a lógica para avançar para a próxima seção do formulário.
+                        // Por exemplo, mostrar o próximo fieldset ou fazer o que for necessário.
+                    }
+                }
+            </script>
+
+
+   
   <!-- fieldsets -->
 <!-- parte 1 -->
-  <fieldset style="transform: scale(1); position: absolute; opacity: 1;">
-    <h2 class="fs-title">Dados Pessoais</h2>
-    <h3 class="fs-subtitle">Digite os dados solicitados abaixo</h3>
-    <div class="form-group" bis_skin_checked="1">
-    <label style="font-size: 14px;">Nome Completo</label>
-    <input type="text" placeholder="Nome Completo" name="NomeCompleto">
-    <span class="text-danger field-validation-valid" data-valmsg-for="NomeCompleto" data-valmsg-replace="true"></span>
-     </div>
-    <div class="form-group" bis_skin_checked="1">
-    <label style="font-size: 14px;">Apelido</label>
-    <input type="text" placeholder="Ex.: Tio Fulano" name="Apelido">
-    <span class="text-danger field-validation-valid" data-valmsg-for="Apelido" data-valmsg-replace="true"></span>
-  </div>
-  <div class="form-group" bis_skin_checked="1">
-    <label style="font-size: 14px;">CPF</label>
-                    <input type="text" placeholder="Ex.: 123.456.789-01" readonly="" value=@CpfUser name="Cpf">
-    <span class="text-danger field-validation-valid" data-valmsg-for="Cpf" data-valmsg-replace="true"></span>
-  </div>
-    <div class="form-group" bis_skin_checked="1">
-<label style="font-size: 14px;">Data de Nascimento</label> 
-<input oninput="mascara(this, 'data')" id="campo3" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="data_nascimento" maxlength="10">
-<span class="text-danger field-validation-valid" data-valmsg-for="Data_Nascimento" data-valmsg-replace="true"></span>
-</div>
-<div class="form-group" bis_skin_checked="1">
-    <label style="font-size: 14px;">Telefone</label>
-     <input oninput="mascara(this, 'tel')" type="text" placeholder="Ex.: (13)12345-6789" name="Telefone">
-    </div>
-    <input type="button" class="next action-button" value="Próximo" id="proximo1">
-  </fieldset>
+      
+            <fieldset style="transform: scale(1); position: absolute; opacity: 1;" id="form1">
+                <h2 class="fs-title">Dados Pessoais</h2>
+                <h3 class="fs-subtitle">Digite os dados solicitados abaixo</h3>
+                <div class="form-group" bis_skin_checked="1">
+                    <label style="font-size: 14px;">Nome Completo</label>
+                    <input type="text" placeholder="Nome Completo" name="NomeCompleto" required id="nomeCompleto">
+                    <span class="text-danger field-validation-valid" data-valmsg-for="NomeCompleto" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group" bis_skin_checked="1">
+                    <label style="font-size: 14px;">Apelido</label>
+                    <input type="text" placeholder="Ex.: Tio Fulano" name="Apelido" required>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Apelido" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group" bis_skin_checked="1">
+                    <label style="font-size: 14px;">CPF</label>
+                    <input type="text" placeholder="Ex.: 123.456.789-01" readonly="" value=@CpfUser name="Cpf" required>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Cpf" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group" bis_skin_checked="1">
+                    <label style="font-size: 14px;">Data de Nascimento</label>
+                    <input oninput="mascara(this, 'data')" id="campo3" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="data_nascimento" maxlength="10" required>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Data_Nascimento" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group" bis_skin_checked="1">
+                    <label style="font-size: 14px;">Telefone</label>
+                    <input oninput="mascara(this, 'tel')" type="text" placeholder="Ex.: (13)12345-6789" name="Telefone" required>
+                </div>
+                <input type="button" class="next action-button" value="Próximo" id="proximo1" onclick="return valida_form()">
+            </fieldset>
   <!-- parte 2 -->
+          
   <fieldset style="display: none; left: 50%; opacity: 0; transform: scale(1); position: absolute;">
      
     <h2 class="fs-title">Informações do Veiculo</h2>
@@ -429,6 +450,7 @@ inputElement.addEventListener("input", function () {
     <input type="button" name="next" class="next action-button" value="Próximo">
   </fieldset>
   <!-- parte 3 -->
+          
   <fieldset style="display: none; left: 50%; opacity: 0;">
     <h2 class="fs-title">Endereço Pessoal</h2>
     <h3 class="fs-subtitle">Digite as informações do seu endereço</h3>

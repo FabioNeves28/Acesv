@@ -92,7 +92,7 @@ namespace Acesvv.Migrations
 
                     b.HasIndex("EscolaId1");
 
-                    b.ToTable("Dados");
+                    b.ToTable("Dados", (string)null);
                 });
 
             modelBuilder.Entity("Acesv.Models.Escola", b =>
@@ -108,7 +108,7 @@ namespace Acesvv.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Escolas");
+                    b.ToTable("Escolas", (string)null);
                 });
 
             modelBuilder.Entity("Acesv.Models.Dados", b =>
