@@ -323,21 +323,93 @@ inputElement.addEventListener("input", function () {
     <li class="">Endereço</li>
   </ul>
             <script type="text/javascript">
-                function valida_form() {
+                function valida_form1() {
                     const nomeCompleto = document.getElementById("nomeCompleto").value;
+                      
+                    const apelido = document.getElementById("Apelido").value;
+
                     if (nomeCompleto === "") {
-                        alert('Por favor, preencha o campo Nome Completo');
+                        alert('Por favor, preencha todos os campos corretamente');
                         document.getElementById("nomeCompleto").focus();
-                        // Role para o fieldset com id "form1"
-                        const fieldsetForm1 = document.getElementById("form1");
-                        fieldsetForm1.scrollIntoView({ behavior: "smooth" });
+                        // Armazene os valores dos campos no localStorage
+                        localStorage.setItem("nomeCompleto", nomeCompleto);
+                        localStorage.setItem("Apelido", apelido);
+                      
+                        // Recarregue a página atual
+                        location.reload();
                         return false;
                     } else {
                         // Aqui você pode adicionar a lógica para avançar para a próxima seção do formulário.
                         // Por exemplo, mostrar o próximo fieldset ou fazer o que for necessário.
                     }
                 }
+
+                // Restaurar valores dos campos após a recarga da página
+                window.onload = function () {
+                    const nomeCompleto = localStorage.getItem("nomeCompleto");
+                    const apelido = localStorage.getItem("Apelido");
+                    const veiculo = localStorage.getItem("Veiculo");
+
+                    if (nomeCompleto) {
+                        document.getElementById("nomeCompleto").value = nomeCompleto;
+                    }
+                  
+                    if (apelido) {
+                        document.getElementById("Apelido").value = apelido;
+                    }
+
+                    // Limpar os valores armazenados no localStorage
+                    localStorage.removeItem("nomeCompleto");
+                    localStorage.removeItem("Apelido");
+                    
+                }
+                    < script type = "text/javascript" >
+                        function valida_form2() {
+                            const veiculo = document.getElementById("Veiculo").value;
+                            const prefixo = document.getElementById("Prefixo").value;
+
+                            if (veiculo === "" || prefixo === "") {
+                                alert('Por favor, preencha todos os campos corretamente');
+                                document.getElementById("Veiculo").focus();
+                                document.getElementById("Prefixo").focus();
+
+                                // Armazene os valores dos campos no localStorage
+                                localStorage.setItem("Veiculo", veiculo);
+                                localStorage.setItem("Prefixo", prefixo);
+
+                                return false; // Remova a recarga da página (location.reload())
+                            } else {
+                                // Aqui você pode adicionar a lógica para avançar para a próxima seção do formulário.
+                                // Por exemplo, mostrar o próximo fieldset ou fazer o que for necessário.
+                            }
+                        }
+
+                // Restaurar valores dos campos após a recarga da página
+                window.onload = function () {
+                    const veiculo = localStorage.getItem("Veiculo");
+                    const prefixo = localStorage.getItem("Prefixo");
+
+                    if (veiculo) {
+                        document.getElementById("Veiculo").value = veiculo;
+                    }
+
+                    if (prefixo) {
+                        document.getElementById("Prefixo").value = prefixo;
+                    }
+
+                    // Limpar os valores armazenados no localStorage
+                    localStorage.removeItem("Veiculo");
+                    localStorage.removeItem("Prefixo");
+                }
+            
+
             </script>
+
+
+
+
+
+
 
 
    
@@ -354,28 +426,28 @@ inputElement.addEventListener("input", function () {
                 </div>
                 <div class="form-group" bis_skin_checked="1">
                     <label style="font-size: 14px;">Apelido</label>
-                    <input type="text" placeholder="Ex.: Tio Fulano" name="Apelido" required>
+                    <input type="text" placeholder="Ex.: Tio Fulano" name="Apelido" required id="Apelido">
                     <span class="text-danger field-validation-valid" data-valmsg-for="Apelido" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group" bis_skin_checked="1">
                     <label style="font-size: 14px;">CPF</label>
-                    <input type="text" placeholder="Ex.: 123.456.789-01" readonly="" value=@CpfUser name="Cpf" required>
+                    <input type="text" placeholder="Ex.: 123.456.789-01" readonly="" value=@CpfUser name="Cpf" required id="Cpf"> 
                     <span class="text-danger field-validation-valid" data-valmsg-for="Cpf" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group" bis_skin_checked="1">
                     <label style="font-size: 14px;">Data de Nascimento</label>
-                    <input oninput="mascara(this, 'data')" id="campo3" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="data_nascimento" maxlength="10" required>
+                    <input oninput="mascara(this, 'data')" id="data_nascimento" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="Data_nascimento" maxlength="10" required>
                     <span class="text-danger field-validation-valid" data-valmsg-for="Data_Nascimento" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group" bis_skin_checked="1">
                     <label style="font-size: 14px;">Telefone</label>
-                    <input oninput="mascara(this, 'tel')" type="text" placeholder="Ex.: (13)12345-6789" name="Telefone" required>
+                    <input oninput="mascara(this, 'tel')" type="text" placeholder="Ex.: (13)12345-6789" name="Telefone" required id="telefone">
                 </div>
-                <input type="button" class="next action-button" value="Próximo" id="proximo1" onclick="return valida_form()">
+                <input type="button" class="next action-button" value="Próximo" id="proximo1" onclick="return valida_form1()">
             </fieldset>
   <!-- parte 2 -->
           
-  <fieldset style="display: none; left: 50%; opacity: 0; transform: scale(1); position: absolute;">
+  <fieldset style="display: none; left: 50%; opacity: 0; transform: scale(1); position: absolute;" id="form2">
      
     <h2 class="fs-title">Informações do Veiculo</h2>
     <h3 class="fs-subtitle">Digite os dados solicitados abaixo</h3>
@@ -406,27 +478,27 @@ inputElement.addEventListener("input", function () {
                 </div>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Veículo</label>
-    <input type="text" placeholder="Ex.: Sprinter">
-    <span class="text-danger field-validation-valid" data-valmsg-for="Veiculo" data-valmsg-replace="true" name="Veiculo"></span>
+                        <input type="text" placeholder="Ex.: Sprinter" id="Veiculo">
+    <span class="text-danger field-validation-valid" data-valmsg-for="Veiculo" data-valmsg-replace="true" name="Veiculo" ></span>
   </div>
     <div class="form-group" bis_skin_checked="1">
   </div>
     <label style="font-size: 14px;">Prefixo</label>
-    <input type="text" placeholder="Número da Van" oninput="mascara(this,'prefixo')">
-                    <span class="text-danger field-validation-valid" data-valmsg-for="Prefixo" data-valmsg-replace="true" name="Prefixo"></span>
+                    <input type="text" placeholder="Número da Van" oninput="mascara(this,'prefixo')" id="Prefixo" name="Prefixo">
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Prefixo" data-valmsg-replace="true" ></span>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Bairros</label>
-    <textarea name="address" placeholder="Digite os bairro que você faz separados por virgula"></textarea>
+    <textarea  placeholder="Digite os bairro que você faz separados por virgula" id="Bairros" name="Bairros"></textarea>
                         <span class="text-danger field-validation-valid" data-valmsg-for="Bairros" data-valmsg-replace="true" name="Bairros"></span>
   </div>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Ano do Veículo</label>
-                        <input type="text" placeholder="Ex.:2015 " maxlength="4" oninput="mascara(this,'numeroInput')" name="Ano">
+                        <input type="text" placeholder="Ex.:2015 " maxlength="4" oninput="mascara(this,'numeroInput')" name="Ano" id="Ano">
                         <span class="text-danger field-validation-valid" data-valmsg-for="Ano" data-valmsg-replace="true" ></span>
   </div>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Número da CNH</label>
-                        <input type="text" placeholder="Insira sua CNH" oninput="mascara(this,'cnh')" name="Cnh">
+                        <input type="text" placeholder="Insira sua CNH" oninput="mascara(this,'cnh')" name="Cnh" id="Cnh">
                         <span class="text-danger field-validation-valid" data-valmsg-for="Cnh" data-valmsg-replace="true"></span>
   </div>
    <div class="form-group">
@@ -443,11 +515,11 @@ inputElement.addEventListener("input", function () {
             </div>
     <div class="form-group" bis_skin_checked="1">
     <label style="font-size: 14px;">Data de validade da CNH</label>
-    <input oninput="mascara(this, 'data')" id="campo3" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="Validade" maxlength="10">
+    <input oninput="mascara(this, 'data')" id="Data_validade" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="Validade" maxlength="10" >
     <span class="text-danger field-validation-valid" data-valmsg-for="Validade" data-valmsg-replace="true"></span>
   </div>
     <input type="button" name="previous" class="previous action-button" value="Anterior">
-    <input type="button" name="next" class="next action-button" value="Próximo">
+    <input type="button" name="next" class="next action-button" value="Próximo"  onclick="return valida_form2()">
   </fieldset>
   <!-- parte 3 -->
           
@@ -477,7 +549,7 @@ inputElement.addEventListener("input", function () {
     <span class="text-danger field-validation-valid" data-valmsg-for="Complemento" data-valmsg-replace="true"></span>
   </div>
     <input type="button" name="previous" class="previous action-button" value="Previous">
-    <input type="submit" value="Create" class="submit action-button" target="_top">
+    <input type="submit" value="Criar" class="submit action-button" target="_top">
   </fieldset>
 </form>
 </div>
