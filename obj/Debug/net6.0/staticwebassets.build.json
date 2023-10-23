@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mTIhwhsxFS8xyym36x6/SvFanAFoyEWzqyhxtI4SoFM=",
+  "Hash": "JjOdJkFe56ursbLwAH/L7DBsnLxvaPH0dS+5z2l2Cnk=",
   "Source": "Acesvv",
   "BasePath": "_content/Acesvv",
   "Mode": "Default",
@@ -1154,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\wwwroot\\js\\validacao.js",
+      "SourceId": "Acesvv",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\wwwroot\\",
+      "BasePath": "_content/Acesvv",
+      "RelativePath": "js/validacao.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\validacao.js"
     },
     {
       "Identity": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

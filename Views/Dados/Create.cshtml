@@ -41,8 +41,8 @@
                 background-color: #1e90ff;
             }
 </style>
- 
-    
+
+
 @{
     // Obtém o email do usuário logado
     var userEmail = User.Identity.Name;
@@ -70,87 +70,87 @@
     }
 }
 <!DOCTYPE html>
-<html lang="pt-BR" >
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dados do Transportador</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="~/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Transportador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIn0sInZlcnNpb24iOiIxLjkuMTIiLCJzY29yZSI6MTA5MTJ9XQ==">
- 
-                    
-
- 
-<style>
-    .dropbtn {
-        color: #000;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-        background-color: #fff;
-    }
 
 
 
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
 
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
+    <style>
+        .dropbtn {
+            color: #000;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: #fff;
+        }
 
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .show {
             display: block;
         }
 
-    .dropdown a:hover {
-        background-color: #ddd;
-        transition: background-color 0.5s ease, color 0.5s ease;
-    }
+        .navbar-nav {
+            padding-right: 15vh;
+        }
+    </style>
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-    .show {
-        display: block;
-    }
-
-    .navbar-nav {
-        padding-right: 15vh;
-    }
-</style>
-<script>
-    /* When the user clicks on the button,
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
                 }
             }
         }
-    }
-</script>
+    </script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -160,54 +160,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
-           
-           
-
-            
 
 
-<style>
-    .multiselect {
-        width: 200px;
-    }
 
-    .selectBox {
-        position: relative;
-    }
 
-        .selectBox select {
-            width: 100%;
-            font-weight: bold;
+
+
+
+    <style>
+        .multiselect {
+            width: 200px;
         }
 
-    .overSelect {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-    }
-
-    #checkboxes {
-        display: none;
-        border: 1px #dadada solid;
-    }
-
-        #checkboxes label {
-            display: block;
+        .selectBox {
+            position: relative;
         }
 
-            #checkboxes label:hover {
-                background-color: #1e90ff;
+            .selectBox select {
+                width: 100%;
+                font-weight: bold;
             }
-            .body{
-              display: contents;
+
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        #checkboxes {
+            display: none;
+            border: 1px #dadada solid;
+        }
+
+            #checkboxes label {
+                display: block;
             }
-</style>
- 
-    
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+                #checkboxes label:hover {
+                    background-color: #1e90ff;
+                }
+
+        .body {
+            display: contents;
+        }
+    </style>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#Cep').on('change', function () {
@@ -228,180 +229,148 @@
                 }
             });
         });
-    
-    var expanded = false;
 
-    function showCheckboxes() {
-        var checkboxes = document.getElementById("checkboxes");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
+        var expanded = false;
+
+        function showCheckboxes() {
+            var checkboxes = document.getElementById("checkboxes");
+            if (!expanded) {
+                checkboxes.style.display = "block";
+                expanded = true;
+            } else {
+                checkboxes.style.display = "none";
+                expanded = false;
+            }
         }
-    }
-    $(document).ready(function () {
-        var $campo = $("#cnh");
-        $campo.mask('000000000000', { reverse: true });
-    });
+        $(document).ready(function () {
+            var $campo = $("#cnh");
+            $campo.mask('000000000000', { reverse: true });
+        });
 
 
-</script>
+    </script>
 
 
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dados do Transportador</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Transportador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 
 
     <script>
-    function mascara(i, t) {
-   var v = i.value;
-   var maxLength;
+        function mascara(i, t) {
+            var v = i.value;
+            var maxLength;
 
-   if (t === "data") {
-      maxLength = 10;
-      if (v.length === 2 || v.length === 5) i.value += "/";
-   } else if (t === "cep") {
-      maxLength = 9;
-      if (v.length === 5) i.value += "-";
-   } else if (t === "tel") {
-      maxLength = 14;
-      if (v.length === 2) i.value = "(" + v + ")";
-      if (v.length === 4 || v.length === 9) i.value += "-";
-   }
-    else if (t == "numeroInput"){
-      maxLength = 4
-    }
-    else if (t == "cnh"){
-      maxLength = 12
-    }
-    else if (t == "prefixo"){
-      maxLength = 12
-    }
-   i.setAttribute("maxlength", maxLength);
-   
-   if (isNaN(v[v.length - 1])) {
-      i.value = v.substring(0, v.length - 1);
-   }
-}
-var inputElement = document.getElementById("numeroInput");
+            if (t === "data") {
+                maxLength = 10;
+                if (v.length === 2 || v.length === 5) i.value += "/";
+            } else if (t === "cep") {
+                maxLength = 9;
+                if (v.length === 5) i.value += "-";
+            } else if (t === "tel") {
+                maxLength = 14;
+                if (v.length === 2) i.value = "(" + v + ")";
+                if (v.length === 4 || v.length === 9) i.value += "-";
+            }
+            else if (t == "numeroInput") {
+                maxLength = 4
+            }
+            else if (t == "cnh") {
+                maxLength = 12
+            }
+            else if (t == "prefixo") {
+                maxLength = 12
+            }
+            i.setAttribute("maxlength", maxLength);
 
-// Adicione um ouvinte de evento de entrada para detectar quando algo é digitado
-inputElement.addEventListener("input", function () {
-    // Obtenha o valor atual do campo de entrada
-    var valor = inputElement.value;
+            if (isNaN(v[v.length - 1])) {
+                i.value = v.substring(0, v.length - 1);
+            }
+        }
+        var inputElement = document.getElementById("numeroInput");
 
-    // Use uma expressão regular para remover caracteres não numéricos
-    valor = valor.replace(/[^0-9]/g, '');
+        // Adicione um ouvinte de evento de entrada para detectar quando algo é digitado
+        inputElement.addEventListener("input", function () {
+            // Obtenha o valor atual do campo de entrada
+            var valor = inputElement.value;
 
-    // Defina o valor atualizado de volta no campo de entrada
-    inputElement.value = valor;
-});
+            // Use uma expressão regular para remover caracteres não numéricos
+            valor = valor.replace(/[^0-9]/g, '');
 
-  </script>
-  <style>
-    border-top{
-        background-color: #fff;
-    }
-  </style>
+            // Defina o valor atualizado de volta no campo de entrada
+            inputElement.value = valor;
+        });
 
-<!-- partial:index.partial.html -->
-<!-- multistep form -->
-<div class="row">
-<form id="msform" asp-action="Create">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-  <!-- progressbar -->
-  <ul id="progressbar">
-    <li class="active">Dados Pessoais</li>
-    <li class="">Informações do Veiculo</li>
-    <li class="">Endereço</li>
-  </ul>
-            <script type="text/javascript">
-                function valida_form1() {
-                    const nomeCompleto = document.getElementById("nomeCompleto").value;
-                      
-                    const apelido = document.getElementById("Apelido").value;
+    </script>
+    <style>
+        border-top {
+            background-color: #fff;
+        }
 
-                    if (nomeCompleto === "") {
-                        alert('Por favor, preencha todos os campos corretamente');
-                        document.getElementById("nomeCompleto").focus();
-                        // Armazene os valores dos campos no localStorage
-                        localStorage.setItem("nomeCompleto", nomeCompleto);
-                        localStorage.setItem("Apelido", apelido);
-                      
-                        // Recarregue a página atual
-                        location.reload();
-                        return false;
-                    } else {
-                        // Aqui você pode adicionar a lógica para avançar para a próxima seção do formulário.
-                        // Por exemplo, mostrar o próximo fieldset ou fazer o que for necessário.
+        .error-message {
+            color: red;
+        }
+    </style>
+
+    <!-- partial:index.partial.html -->
+    <!-- multistep form -->
+    <div class="row">
+        <form id="msform" asp-action="Create" onsubmit="return valida_form();">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Dados Pessoais</li>
+                <li class="">Informações do Veiculo</li>
+                <li class="">Endereço</li>
+            </ul>
+            <script type="text/javascript" language="javascript">
+                function valida_form() {
+                    const campos = [
+                        "nomeCompleto",
+                        "veiculo",
+                        "capacidade",
+                        "placa",
+                        "ano",
+                        "nome",
+                        "cpf",
+                        "prefixo",
+                        "data_nascimento",
+                        "cnh",
+                        "data_validade",
+                        "categoria",
+                        "endereco",
+                        "numero",
+                        "bairro",
+                        "cep",
+                        "email",
+                        "telefone",
+                        "bairros",
+                        "Complemento"
+                    ];
+
+                    let hasEmptyField = false;
+
+                    for (const campo of campos) {
+        const valor = document.getElementById(campo).value;
+        const nomeCampo = document.getElementById(campo).getAttribute("data-nome");
+
+        if (valor === "") {
+            hasEmptyField = true;
+            const campoInput = document.getElementById(campo);
+            const errorDiv = document.createElement("div");
+            errorDiv.className = "error-message";
+             alert(`Por favor, preencha o campo ${nomeCampo}`);
+            errorDiv.textContent = `Por favor, preencha o campo ${nomeCampo}`;
+            campoInput.parentNode.appendChild(errorDiv);
+        }
                     }
+
+                    return !hasEmptyField;
                 }
-
-                // Restaurar valores dos campos após a recarga da página
-                window.onload = function () {
-                    const nomeCompleto = localStorage.getItem("nomeCompleto");
-                    const apelido = localStorage.getItem("Apelido");
-                    const veiculo = localStorage.getItem("Veiculo");
-
-                    if (nomeCompleto) {
-                        document.getElementById("nomeCompleto").value = nomeCompleto;
-                    }
-                  
-                    if (apelido) {
-                        document.getElementById("Apelido").value = apelido;
-                    }
-
-                    // Limpar os valores armazenados no localStorage
-                    localStorage.removeItem("nomeCompleto");
-                    localStorage.removeItem("Apelido");
-                    
-                }
-                    < script type = "text/javascript" >
-                        function valida_form2() {
-                            const veiculo = document.getElementById("Veiculo").value;
-                            const prefixo = document.getElementById("Prefixo").value;
-
-                            if (veiculo === "" || prefixo === "") {
-                                alert('Por favor, preencha todos os campos corretamente');
-                                document.getElementById("Veiculo").focus();
-                                document.getElementById("Prefixo").focus();
-
-                                // Armazene os valores dos campos no localStorage
-                                localStorage.setItem("Veiculo", veiculo);
-                                localStorage.setItem("Prefixo", prefixo);
-
-                                return false; // Remova a recarga da página (location.reload())
-                            } else {
-                                // Aqui você pode adicionar a lógica para avançar para a próxima seção do formulário.
-                                // Por exemplo, mostrar o próximo fieldset ou fazer o que for necessário.
-                            }
-                        }
-
-                // Restaurar valores dos campos após a recarga da página
-                window.onload = function () {
-                    const veiculo = localStorage.getItem("Veiculo");
-                    const prefixo = localStorage.getItem("Prefixo");
-
-                    if (veiculo) {
-                        document.getElementById("Veiculo").value = veiculo;
-                    }
-
-                    if (prefixo) {
-                        document.getElementById("Prefixo").value = prefixo;
-                    }
-
-                    // Limpar os valores armazenados no localStorage
-                    localStorage.removeItem("Veiculo");
-                    localStorage.removeItem("Prefixo");
-                } 
-            
 
             </script>
 
@@ -410,184 +379,182 @@ inputElement.addEventListener("input", function () {
 
 
 
+            <!-- fieldsets -->
+            <!-- parte 1 -->
 
-
-   
-  <!-- fieldsets -->
-<!-- parte 1 -->
-      
             <fieldset style="transform: scale(1); position: absolute; opacity: 1;" id="form1">
                 <h2 class="fs-title">Dados Pessoais</h2>
                 <h3 class="fs-subtitle">Digite os dados solicitados abaixo</h3>
                 <div class="form-group" bis_skin_checked="1">
                     <label style="font-size: 14px;">Nome Completo</label>
-                    <input type="text" placeholder="Nome Completo" name="NomeCompleto" required id="nomeCompleto">
+                    <input type="text" placeholder="Nome Completo" name="NomeCompleto" id="nomeCompleto" title="Nome - Passo 1" required>
                     <span class="text-danger field-validation-valid" data-valmsg-for="NomeCompleto" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group" bis_skin_checked="1">
                     <label style="font-size: 14px;">Apelido</label>
-                    <input type="text" placeholder="Ex.: Tio Fulano" name="Apelido" required id="Apelido">
+                    <input type="text" placeholder="Ex.: Tio Fulano" name="Apelido" id="apelido" title="Apelido - Passo 1" required>
                     <span class="text-danger field-validation-valid" data-valmsg-for="Apelido" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group" bis_skin_checked="1">
                     <label style="font-size: 14px;">CPF</label>
-                    <input type="text" placeholder="Ex.: 123.456.789-01" readonly="" value=@CpfUser name="Cpf" required id="Cpf"> 
+                    <input type="text" placeholder="Ex.: 123.456.789-01" readonly="" value=@CpfUser name="Cpf" required id="cpf">
                     <span class="text-danger field-validation-valid" data-valmsg-for="Cpf" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group" bis_skin_checked="1">
                     <label style="font-size: 14px;">Data de Nascimento</label>
-                    <input oninput="mascara(this, 'data')" id="data_nascimento" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="Data_nascimento" maxlength="10" required>
+                    <input oninput="mascara(this, 'data')" id="data_nascimento" type="text" title="Data de Nascimento - Passo 1" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="Data_nascimento" maxlength="10" required>
                     <span class="text-danger field-validation-valid" data-valmsg-for="Data_Nascimento" data-valmsg-replace="true"></span>
                 </div>
                 <div class="form-group" bis_skin_checked="1">
                     <label style="font-size: 14px;">Telefone</label>
-                    <input oninput="mascara(this, 'tel')" type="text" placeholder="Ex.: (13)12345-6789" name="Telefone" required id="telefone">
+                    <input oninput="mascara(this, 'tel')" type="text" placeholder="Ex.: (13)12345-6789" title="Telefone - Passo 1" name="Telefone" id="telefone" required>
                 </div>
-                <input type="button" class="next action-button" value="Próximo" id="proximo1" onclick="return valida_form1()">
+                <input type="button" class="next action-button" value="Próximo" id="proximo1">
             </fieldset>
-  <!-- parte 2 -->
-          
-  <fieldset style="display: none; left: 50%; opacity: 0; transform: scale(1); position: absolute;" id="form2">
-     
-    <h2 class="fs-title">Informações do Veiculo</h2>
-    <h3 class="fs-subtitle">Digite os dados solicitados abaixo</h3>
-     
-            <div class="form-group">
-               
-                <label asp-for="EscolaId" class="control-label">Escolas</label><br />
-                      <div class="multiselect">
-    <div class="selectBox" onclick="showCheckboxes()">
-      <select>
-        <option>Selecione...</option>
-      </select>
-      <div class="overSelect"> </div></div>  
-    <div id="checkboxes" class="teste">
-                @foreach (var escola in ViewBag.Escolas)
-                {
-                            var isChecked = ViewBag.EscolasSelecionadas != null && ViewBag.EscolasSelecionadas.Contains(escola.Value.ToString());
-                    <div class="form-check">
-                     
-                        <label class="form-check-label" for="chk_@escola.Value">
-                                    <input class="form-check-input" type="checkbox" name="EscolaId" value="@escola.Value" id="chk_@escola.Value" @(isChecked ? "checked" : "")>
-                                    @escola.Text
-                        </label>
+            <!-- parte 2 -->
+
+            <fieldset style="display: none; left: 50%; opacity: 0; transform: scale(1); position: absolute;" id="form2">
+
+                <h2 class="fs-title">Informações do Veiculo</h2>
+                <h3 class="fs-subtitle">Digite os dados solicitados abaixo</h3>
+
+                <div class="form-group">
+
+                    <label asp-for="EscolaId" class="control-label">Escolas</label><br />
+                    <div class="multiselect">
+                        <div class="selectBox" onclick="showCheckboxes()">
+                            <select>
+                                <option value="">Selecione...</option>
+                            </select>
+                            <div class="overSelect"> </div>
+                        </div>
+                        <div id="checkboxes" class="teste" bis_skin_checked="1" style="display: none; width: 0px;">
+
+                            @foreach (var escola in ViewBag.Escolas)
+                            {
+                                var isChecked = ViewBag.EscolasSelecionadas != null && ViewBag.EscolasSelecionadas.Contains(escola.Value.ToString());
+                                <div class="form-check">
+
+
+                                    <label class="form-check-label" for="chk_@escola.Value">
+                                        <input class="form-check-input" type="checkbox" name="EscolaId" required value="@escola.Value" id="chk_@escola.Value" @(isChecked ? "checked" : "")>
+                                        @escola.Text
+                                    </label>
+                                </div>
+                            }
+
+                        </div>
                     </div>
-                }
-                 
-                </div>
-                </div>
-    <div class="form-group" bis_skin_checked="1">
-    <label style="font-size: 14px;">Veículo</label>
-                        <input type="text" placeholder="Ex.: Sprinter" id="Veiculo">
-    <span class="text-danger field-validation-valid" data-valmsg-for="Veiculo" data-valmsg-replace="true" name="Veiculo" ></span>
-  </div>
-    <div class="form-group" bis_skin_checked="1">
-  </div>
-    <label style="font-size: 14px;">Prefixo</label>
-                    <input type="text" placeholder="Número da Van" oninput="mascara(this,'prefixo')" id="Prefixo" name="Prefixo">
-                    <span class="text-danger field-validation-valid" data-valmsg-for="Prefixo" data-valmsg-replace="true" ></span>
-    <div class="form-group" bis_skin_checked="1">
-    <label style="font-size: 14px;">Bairros</label>
-    <textarea  placeholder="Digite os bairro que você faz separados por virgula" id="Bairros" name="Bairros"></textarea>
+                    <div class="form-group" bis_skin_checked="1">
+                        <label style="font-size: 14px;">Veículo</label>
+                        <input type="text" placeholder="Ex.: Sprinter" id="veiculo" required title="Veículo - Passo 2">
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Veiculo" data-valmsg-replace="true" name="Veiculo"></span>
+                    </div>
+                    <div class="form-group" bis_skin_checked="1">
+                    </div>
+                    <label style="font-size: 14px;">Prefixo</label>
+                    <input type="text" placeholder="Número da Van" oninput="mascara(this,'prefixo')" title="Prefixo - Passo 2"  id="prefixo" name="Prefixo" required>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Prefixo" data-valmsg-replace="true"></span>
+                    <div class="form-group" bis_skin_checked="1">
+                        <label style="font-size: 14px;">Bairros</label>
+                        <textarea placeholder="Digite os bairro que você faz separados por virgula" title="Bairros - Passo 2" id="bairros" name="Bairros" required></textarea>
                         <span class="text-danger field-validation-valid" data-valmsg-for="Bairros" data-valmsg-replace="true" name="Bairros"></span>
-  </div>
-    <div class="form-group" bis_skin_checked="1">
-    <label style="font-size: 14px;">Ano do Veículo</label>
-                        <input type="text" placeholder="Ex.:2015 " maxlength="4" oninput="mascara(this,'numeroInput')" name="Ano" id="Ano">
-                        <span class="text-danger field-validation-valid" data-valmsg-for="Ano" data-valmsg-replace="true" ></span>
-  </div>
-    <div class="form-group" bis_skin_checked="1">
-    <label style="font-size: 14px;">Número da CNH</label>
-                        <input type="text" placeholder="Insira sua CNH" oninput="mascara(this,'cnh')" name="Cnh" id="Cnh">
+                    </div>
+                    <div class="form-group" bis_skin_checked="1">
+                        <label style="font-size: 14px;">Ano do Veículo</label>
+                        <input type="text" placeholder="Ex.:2015 " maxlength="4" oninput="mascara(this,'numeroInput')" title="Ano do Veículo - Passo 2" name="Ano" id="ano" required>
+                        <span class="text-danger field-validation-valid" data-valmsg-for="Ano" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group" bis_skin_checked="1">
+                        <label style="font-size: 14px;">Número da CNH</label>
+                        <input type="text" placeholder="Insira sua CNH" oninput="mascara(this,'cnh')" title="CNH - Passo 2" name="Cnh" id="cnh" required>
                         <span class="text-danger field-validation-valid" data-valmsg-for="Cnh" data-valmsg-replace="true"></span>
-  </div>
-   <div class="form-group">
-               <label style="font-size: 14px;">Categoria</label>
-                <select asp-for="CategoriaSelecionada" class="form-control">
-                    <option value="">Selecione uma categoria</option>
-                    @foreach (var categoria in ViewData["Categorias"] as List<SelectListItem>)
-                    {
-                        <option value="@categoria.Value">@categoria.Text</option>
-                    }
-                </select>
-                <span asp-validation-for="CategoriaSelecionada" class="text-danger"></span>
-            </div>
-            </div>
-    <div class="form-group" bis_skin_checked="1">
-    <label style="font-size: 14px;">Data de validade da CNH</label>
-    <input oninput="mascara(this, 'data')" id="Data_validade" type="text" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="Validade" maxlength="10" >
-    <span class="text-danger field-validation-valid" data-valmsg-for="Validade" data-valmsg-replace="true"></span>
-  </div>
-    <input type="button" name="previous" class="previous action-button" value="Anterior">
-    <input type="button" name="next" class="next action-button" value="Próximo"  onclick="return valida_form2()">
-  </fieldset>
-  <!-- parte 3 -->
-          
-  <fieldset style="display: none; left: 50%; opacity: 0;">
-    <h2 class="fs-title">Endereço Pessoal</h2>
-    <h3 class="fs-subtitle">Digite as informações do seu endereço</h3>
-    <div class="form-group" bis_skin_checked="1">
-                <label class="control-label">CEP</label>
-                <input class="form-control" type="text" id="Cep" name="Cep" value="">
-                <span class="text-danger field-validation-valid" data-valmsg-for="Cep" data-valmsg-replace="true"></span>
-            </div>
-   <div class="form-group" bis_skin_checked="1">
-                <label class="control-label">Endereço</label>
-                <input class="form-control" type="text" id="Endereco" name="Endereco" value="">
-                <span class="text-danger field-validation-valid" data-valmsg-for="Endereco" data-valmsg-replace="true"></span>
-            </div>
-            <div class="form-group" bis_skin_checked="1">
-                <label class="control-label">Bairro</label>
-                <input class="form-control" type="text" id="Bairro" name="Bairro" value="">
-                <span class="text-danger field-validation-valid" data-valmsg-for="Bairro" data-valmsg-replace="true"></span>
-            </div>
-  <label for="complementoCheckbox" style="font-size: 11px;">Há Complemento?</label>
-  <input type="checkbox" id="complementoCheckbox">
-  <div class="form-group" id="complementoDiv" style="display: none;" bis_skin_checked="1">
-    <label style="font-size: 14px;">Complemento</label>
-                    <input type="text" name="Complemento" placeholder="Ex.: Apto 00" >
-    <span class="text-danger field-validation-valid" data-valmsg-for="Complemento" data-valmsg-replace="true"></span>
-  </div>
-    <input type="button" name="previous" class="previous action-button" value="Previous">
-    <input type="submit" value="Criar" class="submit action-button" target="_top">
-  </fieldset>
-</form>
-</div>
-<!-- partial -->
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 14px;">Categoria</label>
+                        <select asp-for="CategoriaSelecionada" class="form-control">
+                            <option value="">Selecione uma categoria</option>
+                            @foreach (var categoria in ViewData["Categorias"] as List<SelectListItem>)
+                            {
+                                <option value="@categoria.Value">@categoria.Text</option>
+                            }
+                        </select>
+                        <span asp-validation-for="CategoriaSelecionada" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group" bis_skin_checked="1">
+                    <label style="font-size: 14px;">Data de validade da CNH</label>
+                    <input oninput="mascara(this, 'data')" id="data_validade" type="text"  title="Validade CNH - Passo 2" placeholder="dd/mm/aaaa" autocomplete="off" value="" name="Validade" maxlength="10" required>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Validade" data-valmsg-replace="true"></span>
+                </div>
+                <input type="button" name="previous" class="previous action-button" value="Anterior">
+                <input type="button" name="next" class="next action-button" value="Próximo" onclick="return valida_form2()">
+            </fieldset>
+            <!-- parte 3 -->
 
-
-
-        </main>
+            <fieldset style="display: none; left: 50%; opacity: 0;">
+                <h2 class="fs-title">Endereço Pessoal</h2>
+                <h3 class="fs-subtitle">Digite as informações do seu endereço</h3>
+                <div class="form-group" bis_skin_checked="1">
+                    <label class="control-label">CEP</label>
+                    <input class="form-control" type="text" title="CEP - Passo 3" id="Cep" name="Cep" value="" required>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Cep" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group" bis_skin_checked="1">
+                    <label class="control-label">Endereço</label>
+                    <input class="form-control" type="text" id="Endereco" title="Endereço - Passo 3" name="Endereco" value="" required>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Endereco" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group" bis_skin_checked="1">
+                    <label class="control-label">Bairro</label>
+                    <input class="form-control" type="text" id="Bairro"  title="Bairro - Passo 3" name="Bairro" value="" required>
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Bairro" data-valmsg-replace="true"></span>
+                </div>
+                <label for="complementoCheckbox" style="font-size: 11px;">Há Complemento?</label>
+                <input type="checkbox" id="complementoCheckbox">
+                <div class="form-group" id="complementoDiv" style="display: none;" bis_skin_checked="1">
+                    <label style="font-size: 14px;">Complemento</label>
+                    <input type="text" name="Complemento" placeholder="Ex.: Apto 00">
+                    <span class="text-danger field-validation-valid" data-valmsg-for="Complemento" data-valmsg-replace="true"></span>
+                </div>
+                <input type="button" name="previous" class="previous action-button" value="Previous">
+                <input type="submit" value="Criar" class="submit action-button" target="_top">
+            </fieldset>
+        </form>
+    </div>
+    <!-- partial -->
+    </main>
     </div>
 
-  
+
     <script src="/lib/jquery/dist/jquery.min.js"></script>
     <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0"></script>
-    
-  <script>// Suponha que você tenha um botão "previous" com o ID "previousButton"
-const previousButton = document.getElementById("proximo1");
-const footer = document.getElementById("footer"); // Adicione o ID "footer" ao seu elemento
 
-let isFooterExpanded = false; // Variável para controlar o estado do rodapé
+    <script>
+        // Suponha que você tenha um botão "previous" com o ID "previousButton"
+        const previousButton = document.getElementById("proximo1");
+        const footer = document.getElementById("footer"); // Adicione o ID "footer" ao seu elemento
 
-previousButton.addEventListener("click", () => {
-  if (!isFooterExpanded) {
-    // Se o rodapé não estiver expandido, aumente a altura em 140%
-    footer.style.height = "140%";
-  } else {
-    // Caso contrário, restaure a altura normal
-    footer.style.height = "130%"; // Ou o valor normal desejado
-  }
+        let isFooterExpanded = false; // Variável para controlar o estado do rodapé
 
-  isFooterExpanded = !isFooterExpanded; // Inverte o estado do rodapé
-});
+        previousButton.addEventListener("click", () => {
+            if (!isFooterExpanded) {
+                // Se o rodapé não estiver expandido, aumente a altura em 140%
+                footer.style.height = "140%";
+            } else {
+                // Caso contrário, restaure a altura normal
+                footer.style.height = "130%"; // Ou o valor normal desejado
+            }
 
-</script>
+            isFooterExpanded = !isFooterExpanded; // Inverte o estado do rodapé
+        });
+
+    </script>
 
 
-<script>
-  const complementoCheckbox = document.getElementById("complementoCheckbox");
+    <script>
+        const complementoCheckbox = document.getElementById("complementoCheckbox");
         const complementoDiv = document.getElementById("complementoDiv");
 
         complementoCheckbox.addEventListener("change", function () {
@@ -597,12 +564,14 @@ previousButton.addEventListener("click", () => {
                 complementoDiv.style.display = "none";
             }
         });
-</script>
+    </script>
 
 
 
 </body>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

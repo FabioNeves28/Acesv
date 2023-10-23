@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\wwwroot\\js\\validacao.js",
+      "PackagePath": "staticwebassets\\js\\validacao.js"
+    },
+    {
       "Id": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
