@@ -376,7 +376,7 @@ $.extend( $.validator, {
 		rangelength: jQuery.validator.format("Por favor, forne&ccedil;a um valor entre {0} e {1} caracteres de comprimento."),
 		range: jQuery.validator.format("Por favor, forne&ccedil;a um valor entre {0} e {1}."),
 		max: jQuery.validator.format("Por favor, forne&ccedil;a um valor menor ou igual a {0}."),
-		min: jQuery.validator.format("Por favor, forne&ccedil;a um valor maior ou igual a {0}.")
+		min: jQuery.validator.format("Por favor, forne&ccedil;a um valor maior ou igual a {0}."),
 		step: $.validator.format( "Please enter a multiple of {0}." )
 	},
 

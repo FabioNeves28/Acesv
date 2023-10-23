@@ -25,6 +25,7 @@ namespace Acesv.Models
         public string Prefixo { get; set; }
         public string Bairros { get; set; }
         public string Veiculo { get; set; }
+        public string Placa { get; set; }   
         public int Ano { get; set; }
         public string Cnh { get; set; }
         [NotMapped]
