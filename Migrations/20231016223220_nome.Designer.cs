@@ -4,6 +4,7 @@ using Acesv2.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Acesvv.Migrations
 {
     [DbContext(typeof(BD))]
-    partial class BDModelSnapshot : ModelSnapshot
+    [Migration("20231016223220_nome")]
+    partial class nome
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,7 +94,7 @@ namespace Acesvv.Migrations
 
                     b.HasIndex("EscolaId1");
 
-                    b.ToTable("Dados", (string)null);
+                    b.ToTable("Dados");
                 });
 
             modelBuilder.Entity("Acesv.Models.Escola", b =>
@@ -108,7 +110,7 @@ namespace Acesvv.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Escolas", (string)null);
+                    b.ToTable("Escolas");
                 });
 
             modelBuilder.Entity("Acesv.Models.Dados", b =>
