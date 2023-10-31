@@ -62,6 +62,10 @@
               "target": "Package",
               "version": "[6.0.16, )"
             },
+            "PagedList.Mvc": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "React.Core": {
               "target": "Package",
               "version": "[5.2.12, )"
@@ -73,6 +77,10 @@
             "React.Web.Mvc4": {
               "target": "Package",
               "version": "[5.2.12, )"
+            },
+            "Rotativa": {
+              "target": "Package",
+              "version": "[1.7.3, )"
             },
             "SendGrid": {
               "target": "Package",
