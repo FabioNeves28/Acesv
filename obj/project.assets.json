@@ -705,32 +705,32 @@
       "MessagePackAnalyzer/2.1.152": {
         "type": "package"
       },
-      "Microsoft.AspNet.Mvc/4.0.40804": {
+      "Microsoft.AspNet.Mvc/5.2.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNet.Razor": "2.0.20710",
-          "Microsoft.AspNet.WebPages": "2.0.20710"
+          "Microsoft.AspNet.Razor": "[3.2.3, 3.3.0)",
+          "Microsoft.AspNet.WebPages": "[3.2.3, 3.3.0)"
         },
         "compile": {
-          "lib/net40/System.Web.Mvc.dll": {
+          "lib/net45/System.Web.Mvc.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/System.Web.Mvc.dll": {
+          "lib/net45/System.Web.Mvc.dll": {
             "related": ".xml"
           }
         }
       },
-      "Microsoft.AspNet.Razor/2.0.20710": {
+      "Microsoft.AspNet.Razor/3.2.3": {
         "type": "package",
         "compile": {
-          "lib/net40/System.Web.Razor.dll": {
+          "lib/net45/System.Web.Razor.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/System.Web.Razor.dll": {
+          "lib/net45/System.Web.Razor.dll": {
             "related": ".xml"
           }
         }
@@ -752,37 +752,37 @@
           }
         }
       },
-      "Microsoft.AspNet.WebPages/2.0.20710": {
+      "Microsoft.AspNet.WebPages/3.2.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNet.Razor": "[2.0.20710, 2.1.0)",
+          "Microsoft.AspNet.Razor": "[3.2.3, 3.3.0)",
           "Microsoft.Web.Infrastructure": "1.0.0"
         },
         "compile": {
-          "lib/net40/System.Web.Helpers.dll": {
+          "lib/net45/System.Web.Helpers.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.Deployment.dll": {
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.Razor.dll": {
+          "lib/net45/System.Web.WebPages.Razor.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.dll": {
+          "lib/net45/System.Web.WebPages.dll": {
             "related": ".Deployment.xml;.Razor.xml;.xml"
           }
         },
         "runtime": {
-          "lib/net40/System.Web.Helpers.dll": {
+          "lib/net45/System.Web.Helpers.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.Deployment.dll": {
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.Razor.dll": {
+          "lib/net45/System.Web.WebPages.Razor.dll": {
             "related": ".xml"
           },
-          "lib/net40/System.Web.WebPages.dll": {
+          "lib/net45/System.Web.WebPages.dll": {
             "related": ".Deployment.xml;.Razor.xml;.xml"
           }
         }
@@ -2396,6 +2396,35 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
         }
       },
+      "PagedList/1.17.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/PagedList.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/PagedList.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "PagedList.Mvc/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "PagedList": "1.17.0"
+        },
+        "compile": {
+          "lib/net40/PagedList.Mvc.dll": {
+            "related": ".XML"
+          }
+        },
+        "runtime": {
+          "lib/net40/PagedList.Mvc.dll": {
+            "related": ".XML"
+          }
+        }
+      },
       "React.Core/5.2.12": {
         "type": "package",
         "dependencies": {
@@ -2449,6 +2478,18 @@
           "lib/net40/React.Web.Mvc4.dll": {
             "related": ".pdb;.xml"
           }
+        }
+      },
+      "Rotativa/1.7.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "5.2.3"
+        },
+        "compile": {
+          "lib/net461/Rotativa.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Rotativa.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -5115,31 +5156,31 @@
         "tools/uninstall.ps1"
       ]
     },
-    "Microsoft.AspNet.Mvc/4.0.40804": {
-      "sha512": "tQrw7I+Ol1Kr3kDKcA0XNT68ctjciLIUZqGtMBk7fNjEGUUVDifwlOJJXUBQxUayv4aHwB+OOiPFF3ZD6VXmRw==",
+    "Microsoft.AspNet.Mvc/5.2.3": {
+      "sha512": "i8jZf5QrbcFmjiYWRD7o7qTak/oXKxV80MgP4cZ33A8GC0RBtBIdZ1VHaloGUg+qsHUz5rVkGpwenM+ugDz5PA==",
       "type": "package",
-      "path": "microsoft.aspnet.mvc/4.0.40804",
+      "path": "microsoft.aspnet.mvc/5.2.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "content/Web.config.install.xdt",
-        "content/Web.config.uninstall.xdt",
-        "lib/net40/System.Web.Mvc.dll",
-        "lib/net40/System.Web.Mvc.xml",
-        "microsoft.aspnet.mvc.4.0.40804.nupkg.sha512",
+        "Content/Web.config.install.xdt",
+        "Content/Web.config.uninstall.xdt",
+        "lib/net45/System.Web.Mvc.dll",
+        "lib/net45/System.Web.Mvc.xml",
+        "microsoft.aspnet.mvc.5.2.3.nupkg.sha512",
         "microsoft.aspnet.mvc.nuspec"
       ]
     },
-    "Microsoft.AspNet.Razor/2.0.20710": {
-      "sha512": "JkaLdzjXnjcd8JAaAAtahMtqORdBfX2pOlVdv7khq2hKBLqjdP+5q2LVLmbLecFGxoW9inDNjZKvwdVuiwFbZg==",
+    "Microsoft.AspNet.Razor/3.2.3": {
+      "sha512": "leta+Q73O7+pR8ThTqXmwaNMSqwZQQ3BHfpUHd8S1XaUWe1jRVLitMHqo1AmY7wPNLyankPA1beiUKEGj8Q3Dw==",
       "type": "package",
-      "path": "microsoft.aspnet.razor/2.0.20710",
+      "path": "microsoft.aspnet.razor/3.2.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net40/System.Web.Razor.dll",
-        "lib/net40/System.Web.Razor.xml",
-        "microsoft.aspnet.razor.2.0.20710.nupkg.sha512",
+        "lib/net45/System.Web.Razor.dll",
+        "lib/net45/System.Web.Razor.xml",
+        "microsoft.aspnet.razor.3.2.3.nupkg.sha512",
         "microsoft.aspnet.razor.nuspec"
       ]
     },
@@ -5162,22 +5203,24 @@
         "microsoft.aspnet.webapi.client.nuspec"
       ]
     },
-    "Microsoft.AspNet.WebPages/2.0.20710": {
-      "sha512": "bpWbVKW0RpM/XtTwZL7pjhuVqpaB/cHutR7W4YXLIXFMHHXilqzVxpFmyzwoIZVO1xmSdoelbDRBncIA5D24EA==",
+    "Microsoft.AspNet.WebPages/3.2.3": {
+      "sha512": "zbtxBERla5RE/mhftwbrXOzc0r6lh8WcnjpGW7QQe+PvSDDx1BgsTUGzfCXO/vJznHNpY5oCSYLt8Q5vUu7F0g==",
       "type": "package",
-      "path": "microsoft.aspnet.webpages/2.0.20710",
+      "path": "microsoft.aspnet.webpages/3.2.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net40/System.Web.Helpers.dll",
-        "lib/net40/System.Web.Helpers.xml",
-        "lib/net40/System.Web.WebPages.Deployment.dll",
-        "lib/net40/System.Web.WebPages.Deployment.xml",
-        "lib/net40/System.Web.WebPages.Razor.dll",
-        "lib/net40/System.Web.WebPages.Razor.xml",
-        "lib/net40/System.Web.WebPages.dll",
-        "lib/net40/System.Web.WebPages.xml",
-        "microsoft.aspnet.webpages.2.0.20710.nupkg.sha512",
+        "Content/Web.config.install.xdt",
+        "Content/Web.config.uninstall.xdt",
+        "lib/net45/System.Web.Helpers.dll",
+        "lib/net45/System.Web.Helpers.xml",
+        "lib/net45/System.Web.WebPages.Deployment.dll",
+        "lib/net45/System.Web.WebPages.Deployment.xml",
+        "lib/net45/System.Web.WebPages.Razor.dll",
+        "lib/net45/System.Web.WebPages.Razor.xml",
+        "lib/net45/System.Web.WebPages.dll",
+        "lib/net45/System.Web.WebPages.xml",
+        "microsoft.aspnet.webpages.3.2.3.nupkg.sha512",
         "microsoft.aspnet.webpages.nuspec"
       ]
     },
@@ -7626,6 +7669,33 @@
         "nuget.versioning.nuspec"
       ]
     },
+    "PagedList/1.17.0": {
+      "sha512": "Ou6F3WKXh49hOo0TxWM+SkIGuKllYPuPPvnSYOlQ1sTrtuEyuDUhYbSJd5Sdb06i/sWUJZTjiUecEs3Ht/Hx3g==",
+      "type": "package",
+      "path": "pagedlist/1.17.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/PagedList.dll",
+        "lib/net40/PagedList.xml",
+        "pagedlist.1.17.0.nupkg.sha512",
+        "pagedlist.nuspec"
+      ]
+    },
+    "PagedList.Mvc/4.5.0": {
+      "sha512": "D0M4qW2g4a9cwG8ozIKUnJheCrm5GpFTceqUl63AXWaAVnTgk+TysZYUOGMsBRuzid8aF+/E8b0bXM6+90jiEw==",
+      "type": "package",
+      "path": "pagedlist.mvc/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Content/PagedList.css",
+        "lib/net40/PagedList.Mvc.XML",
+        "lib/net40/PagedList.Mvc.dll",
+        "pagedlist.mvc.4.5.0.nupkg.sha512",
+        "pagedlist.mvc.nuspec"
+      ]
+    },
     "React.Core/5.2.12": {
       "sha512": "UqaxnMqVhQDLLNkIR4cNwJAR0lxdT8IwYl6iqXvw9+60uEcOXtbZIlD5TIHVsrenBaovNNsqJwE1ZqB/vEo+lg==",
       "type": "package",
@@ -7678,6 +7748,23 @@
         "logo_64.png",
         "react.web.mvc4.5.2.12.nupkg.sha512",
         "react.web.mvc4.nuspec"
+      ]
+    },
+    "Rotativa/1.7.3": {
+      "sha512": "MdLzud1Tt9JYLG3aNZHQcEITbT2r829rZAm96iLZAUlilXTsZkReKzyfjaIfwDZ9+++TRUKwWPKjI+WPHVz0ZA==",
+      "type": "package",
+      "path": "rotativa/1.7.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/App_Browsers/qt.browser",
+        "content/Rotativa/help-wkhtmltoimage.txt",
+        "content/Rotativa/help-wkhtmltopdf.txt",
+        "content/Rotativa/wkhtmltoimage.exe",
+        "content/Rotativa/wkhtmltopdf.exe",
+        "lib/net461/Rotativa.dll",
+        "rotativa.1.7.3.nupkg.sha512",
+        "rotativa.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -11850,9 +11937,11 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.21",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.21",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
+      "PagedList.Mvc >= 4.5.0",
       "React.Core >= 5.2.12",
       "React.Web >= 5.2.12",
       "React.Web.Mvc4 >= 5.2.12",
+      "Rotativa >= 1.7.3",
       "SendGrid >= 9.28.1",
       "ViaCep >= 4.1.135",
       "iTextSharp >= 5.5.13.3"
@@ -11919,6 +12008,10 @@
             "target": "Package",
             "version": "[6.0.16, )"
           },
+          "PagedList.Mvc": {
+            "target": "Package",
+            "version": "[4.5.0, )"
+          },
           "React.Core": {
             "target": "Package",
             "version": "[5.2.12, )"
@@ -11930,6 +12023,10 @@
           "React.Web.Mvc4": {
             "target": "Package",
             "version": "[5.2.12, )"
+          },
+          "Rotativa": {
+            "target": "Package",
+            "version": "[1.7.3, )"
           },
           "SendGrid": {
             "target": "Package",
@@ -11992,7 +12089,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.Mvc 4.0.40804' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "O pacote 'Microsoft.AspNet.Mvc 5.2.3' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.AspNet.Mvc",
       "targetGraphs": [
         "net6.0"
@@ -12002,7 +12099,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.Razor 2.0.20710' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "O pacote 'Microsoft.AspNet.Razor 3.2.3' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.AspNet.Razor",
       "targetGraphs": [
         "net6.0"
@@ -12012,7 +12109,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.WebPages 2.0.20710' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "O pacote 'Microsoft.AspNet.WebPages 3.2.3' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.AspNet.WebPages",
       "targetGraphs": [
         "net6.0"
@@ -12024,6 +12121,26 @@
       "warningLevel": 1,
       "message": "O pacote 'Microsoft.Web.Infrastructure 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.Web.Infrastructure",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'PagedList 1.17.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "PagedList",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'PagedList.Mvc 4.5.0' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "PagedList.Mvc",
       "targetGraphs": [
         "net6.0"
       ]
@@ -12044,6 +12161,16 @@
       "warningLevel": 1,
       "message": "O pacote 'React.Web.Mvc4 5.2.12' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "React.Web.Mvc4",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Rotativa 1.7.3' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net6.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Rotativa",
       "targetGraphs": [
         "net6.0"
       ]
