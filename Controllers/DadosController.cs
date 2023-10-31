@@ -23,7 +23,7 @@ namespace Acesvv.Controllers
         public DadosController(BD dadosContext)
         {
             _context = dadosContext;
-            
+
         }
 
         // GET: Dados
@@ -60,7 +60,7 @@ namespace Acesvv.Controllers
                     table.AddCell(dados.Prefixo);
                     table.AddCell(dados.Veiculo);
                     table.AddCell(dados.Cnh);
-                    
+
                     table.AddCell(dados.Endereco);
                     table.AddCell(dados.Bairro);
                     table.AddCell(dados.Cep);
@@ -185,11 +185,11 @@ namespace Acesvv.Controllers
             var dados = await _context.Dados.FindAsync(id);
             if (dados == null)
             {
-               
-               
+
+
             }
 
-        
+
 
             var escolas = _context.Escolas.ToList();
             ViewBag.Escolas = escolas.Select(e => new SelectListItem
@@ -279,7 +279,7 @@ namespace Acesvv.Controllers
         {
             if (id == null || _context.Dados == null)
             {
-                 ViewBag.ErrorMessage = "Nenhum ID de usuário foi fornecido para edição.";
+                ViewBag.ErrorMessage = "Nenhum ID de usuário foi fornecido para edição.";
                 return NotFound();
             }
 

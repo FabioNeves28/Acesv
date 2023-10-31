@@ -6,9 +6,34 @@
 
     ViewData["Title"] = "Index";
 }
+@{
+   
+    var QtdUsers = "";
+
+    // Executa a consulta SQL para obter o valor do campo EditId
+
+    using (var connection = new SqlConnection(@"Data Source=DESKTOP-3QU9K7J\SQLEXPRESS; Initial Catalog=Dados;Integrated Security=True;"))
+    {
+        connection.Open();
+
+        // Consulta SQL para obter o CPF do usuário logado com base no email
+        var queryQtd = "SELECT COUNT(*) FROM Dados";
+        using (var commandQtd = new SqlCommand(queryQtd, connection))
+        {
+          
+            var qtdResult = commandQtd.ExecuteScalar();
+            if (qtdResult != null)
+            {
+                QtdUsers = qtdResult.ToString();
+            }
+        }
+    }
+}
 
 <h1>Relatório dos Transportadores</h1>
+<h5>Quantidade de transportadores registrados: @QtdUsers </h5>
     <a href="@Url.Action("DownloadRelatorio", "Dados")">
+
     <button type="button" class="btn btn-outline-danger">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-pdf" viewBox="0 0 16 16">
             <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"></path>
@@ -74,35 +99,15 @@
             }
         }
     }
-     function confirmDelete() {
+    function confirmDelete() {
         return confirm("Tem certeza que deseja apagar o registro?");
     }
 </script>
-@{
-   
-    var QtdUsers = "";
 
-    // Executa a consulta SQL para obter o valor do campo EditId
 
-    using (var connection = new SqlConnection(@"Data Source=DESKTOP-3QU9K7J\SQLEXPRESS; Initial Catalog=Dados;Integrated Security=True;"))
-    {
-        connection.Open();
 
-        // Consulta SQL para obter o CPF do usuário logado com base no email
-        var queryQtd = "SELECT COUNT(*) FROM Dados";
-        using (var commandQtd = new SqlCommand(queryQtd, connection))
-        {
-          
-            var qtdResult = commandQtd.ExecuteScalar();
-            if (qtdResult != null)
-            {
-                QtdUsers = qtdResult.ToString();
-            }
-        }
-    }
 
-}
-    
+
 
 <div>
     <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Pesquisar Transportador" class="form-control" style="width: 300px;">
@@ -123,6 +128,9 @@
             <th>
                 Data de Nascimento
             </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Prefixo)
             </th>
@@ -132,6 +140,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Veiculo)
             </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Placa)
+                </th>
             <th>
                 @Html.DisplayNameFor(model => model.Ano)
             </th>
@@ -181,6 +192,10 @@
                 @Html.DisplayFor(modelItem => item.Data_Nascimento)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+
+            <td>
                 @Html.DisplayFor(modelItem => item.Prefixo)
             </td>
             <td>
@@ -189,6 +204,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Veiculo)
             </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Placa)
+                    </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Ano)
             </td>
