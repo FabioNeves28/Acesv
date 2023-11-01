@@ -48,7 +48,7 @@ namespace Acesvv.Controllers
 
                 var mapeamentoCampos = new Dictionary<string, string>
         {
-            { "EscolaId", "EscolaId" },
+            { "Escolas", "EscolaId" },
             { "Nome Completo", "NomeCompleto" },
             { "Telefone", "Telefone" },
             { "Placa", "Placa" },
@@ -60,7 +60,7 @@ namespace Acesvv.Controllers
             { "Veículo", "Veiculo" },
             { "Ano", "Ano" },
             { "CNH", "Cnh" },
-            { "Categoria Selecionada", "CategoriaSelecionada" },
+            { "Categoria", "CategoriaSelecionada" },
             { "Validade", "Validade" },
             { "Endereço", "Endereco" },
             { "Bairro", "Bairro" },
@@ -69,6 +69,10 @@ namespace Acesvv.Controllers
             { "Complemento", "Complemento" }
         };
 
+                var headerFont = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, BaseColor.WHITE);
+                var cellFont = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL, BaseColor.BLACK);
+                var headerBackgroundColor = new BaseColor(0, 156, 220); // Cor de fundo azul claro
+              
                 foreach (var dado in dados)
                 {
                     PdfPTable table = new PdfPTable(2);
@@ -80,14 +84,17 @@ namespace Acesvv.Controllers
                         var nomeColuna = colunaPersonalizada.Key;
                         var nomePropriedade = colunaPersonalizada.Value;
 
-                        string valor = nomeColuna == "EscolaId" ? GetEscolasSelecionadas(dado.EscolaId) : GetValorCampo(dado, nomePropriedade);
+                        string valor = nomePropriedade == "EscolaId" ? GetEscolasSelecionadas(dado.EscolaId) : GetValorCampo(dado, nomePropriedade);
 
-                        PdfPCell cell = new PdfPCell(new Phrase(nomeColuna, new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
-                        table.AddCell(cell);
 
-                        cell = new PdfPCell(new Phrase(valor, new Font(Font.FontFamily.HELVETICA, 12)));
+                        PdfPCell headerCell = new PdfPCell(new Phrase(nomeColuna, headerFont));
+                        headerCell.BackgroundColor = headerBackgroundColor;
+                        table.AddCell(headerCell);
+
+                        PdfPCell cell = new PdfPCell(new Phrase(valor, cellFont));
                         table.AddCell(cell);
                     }
+
 
                     doc.Add(table);
                     doc.NewPage(); // Adiciona uma nova página para o próximo registro
@@ -100,6 +107,7 @@ namespace Acesvv.Controllers
                 return File(pdfData, "application/pdf", "Dados.pdf");
             }
         }
+
 
 
         string GetValorCampo(object obj, string fieldName)
