@@ -46,32 +46,53 @@ namespace Acesvv.Controllers
 
                 doc.Open();
 
-                PdfPTable table = new PdfPTable(2);
-                float[] columnWidths = new float[] { 2f, 4f };
-                table.SetWidths(columnWidths);
-
-                var campos = new string[]
-                {
-            "EscolaId", "NomeCompleto", "Telefone", "Placa", "Apelido",
-            "Cpf", "Data_Nascimento", "Prefixo", "Bairros", "Veiculo",
-            "Ano", "Cnh", "Categoria", "CategoriaSelecionada",
-            "Validade", "Endereco", "Bairro", "Cep", "Número", "Complemento"
-                };
+                var mapeamentoCampos = new Dictionary<string, string>
+        {
+            { "EscolaId", "EscolaId" },
+            { "Nome Completo", "NomeCompleto" },
+            { "Telefone", "Telefone" },
+            { "Placa", "Placa" },
+            { "Apelido", "Apelido" },
+            { "CPF", "Cpf" },
+            { "Data de Nascimento", "Data_Nascimento" },
+            { "Prefixo", "Prefixo" },
+            { "Bairros", "Bairros" },
+            { "Veículo", "Veiculo" },
+            { "Ano", "Ano" },
+            { "CNH", "Cnh" },
+            { "Categoria Selecionada", "CategoriaSelecionada" },
+            { "Validade", "Validade" },
+            { "Endereço", "Endereco" },
+            { "Bairro", "Bairro" },
+            { "CEP", "Cep" },
+            { "Número", "Número" },
+            { "Complemento", "Complemento" }
+        };
 
                 foreach (var dado in dados)
                 {
-                    foreach (var campo in campos)
+                    PdfPTable table = new PdfPTable(2);
+                    float[] columnWidths = new float[] { 2f, 4f };
+                    table.SetWidths(columnWidths);
+
+                    foreach (var colunaPersonalizada in mapeamentoCampos)
                     {
-                        string valor = campo == "EscolaId" ? GetEscolasSelecionadas(dado.EscolaId) : GetValorCampo(dado, campo);
-                        PdfPCell cell = new PdfPCell(new Phrase(campo, new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
+                        var nomeColuna = colunaPersonalizada.Key;
+                        var nomePropriedade = colunaPersonalizada.Value;
+
+                        string valor = nomeColuna == "EscolaId" ? GetEscolasSelecionadas(dado.EscolaId) : GetValorCampo(dado, nomePropriedade);
+
+                        PdfPCell cell = new PdfPCell(new Phrase(nomeColuna, new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
                         table.AddCell(cell);
 
                         cell = new PdfPCell(new Phrase(valor, new Font(Font.FontFamily.HELVETICA, 12)));
                         table.AddCell(cell);
                     }
+
+                    doc.Add(table);
+                    doc.NewPage(); // Adiciona uma nova página para o próximo registro
                 }
 
-                doc.Add(table);
                 doc.Close();
 
                 byte[] pdfData = ms.ToArray();
@@ -79,6 +100,7 @@ namespace Acesvv.Controllers
                 return File(pdfData, "application/pdf", "Dados.pdf");
             }
         }
+
 
         string GetValorCampo(object obj, string fieldName)
         {
@@ -98,7 +120,7 @@ namespace Acesvv.Controllers
         {
             if (escolaIds == null)
             {
-                return "Nennhuma escola foi selecionada pelo transportador."; // Retorna uma string vazia se a lista for nula
+                return "Nennhuma escola encontrada";
             }
 
             var escolasSelecionadas = new List<string>();
