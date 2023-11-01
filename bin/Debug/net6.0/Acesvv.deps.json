@@ -13,9 +13,11 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.21",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.21",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
+          "PagedList.Mvc": "4.5.0",
           "React.Core": "5.2.12",
           "React.Web": "5.2.12",
           "React.Web.Mvc4": "5.2.12",
+          "Rotativa": "1.7.3",
           "SendGrid": "9.28.1",
           "ViaCep": "4.1.135",
           "iTextSharp": "5.5.13.3"
@@ -644,23 +646,23 @@
         }
       },
       "MessagePackAnalyzer/2.1.152": {},
-      "Microsoft.AspNet.Mvc/4.0.40804": {
+      "Microsoft.AspNet.Mvc/5.2.3": {
         "dependencies": {
-          "Microsoft.AspNet.Razor": "2.0.20710",
-          "Microsoft.AspNet.WebPages": "2.0.20710"
+          "Microsoft.AspNet.Razor": "3.2.3",
+          "Microsoft.AspNet.WebPages": "3.2.3"
         },
         "runtime": {
-          "lib/net40/System.Web.Mvc.dll": {
-            "assemblyVersion": "4.0.0.1",
-            "fileVersion": "4.0.40804.0"
+          "lib/net45/System.Web.Mvc.dll": {
+            "assemblyVersion": "5.2.3.0",
+            "fileVersion": "5.2.30128.0"
           }
         }
       },
-      "Microsoft.AspNet.Razor/2.0.20710": {
+      "Microsoft.AspNet.Razor/3.2.3": {
         "runtime": {
-          "lib/net40/System.Web.Razor.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.20710.0"
+          "lib/net45/System.Web.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
           }
         }
       },
@@ -676,27 +678,27 @@
           }
         }
       },
-      "Microsoft.AspNet.WebPages/2.0.20710": {
+      "Microsoft.AspNet.WebPages/3.2.3": {
         "dependencies": {
-          "Microsoft.AspNet.Razor": "2.0.20710",
+          "Microsoft.AspNet.Razor": "3.2.3",
           "Microsoft.Web.Infrastructure": "1.0.0"
         },
         "runtime": {
-          "lib/net40/System.Web.Helpers.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.20710.0"
+          "lib/net45/System.Web.Helpers.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
           },
-          "lib/net40/System.Web.WebPages.Deployment.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.20710.0"
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
           },
-          "lib/net40/System.Web.WebPages.Razor.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.20710.0"
+          "lib/net45/System.Web.WebPages.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
           },
-          "lib/net40/System.Web.WebPages.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.20710.0"
+          "lib/net45/System.Web.WebPages.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.30128.0"
           }
         }
       },
@@ -1872,6 +1874,25 @@
           }
         }
       },
+      "PagedList/1.17.0": {
+        "runtime": {
+          "lib/net40/PagedList.dll": {
+            "assemblyVersion": "1.17.0.0",
+            "fileVersion": "1.17.0.0"
+          }
+        }
+      },
+      "PagedList.Mvc/4.5.0": {
+        "dependencies": {
+          "PagedList": "1.17.0"
+        },
+        "runtime": {
+          "lib/net40/PagedList.Mvc.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "4.5.0.0"
+          }
+        }
+      },
       "React.Core/5.2.12": {
         "dependencies": {
           "JSPool": "4.0.0",
@@ -1901,7 +1922,7 @@
       },
       "React.Web.Mvc4/5.2.12": {
         "dependencies": {
-          "Microsoft.AspNet.Mvc": "4.0.40804",
+          "Microsoft.AspNet.Mvc": "5.2.3",
           "React.Core": "5.2.12",
           "React.Web": "5.2.12"
         },
@@ -1909,6 +1930,17 @@
           "lib/net40/React.Web.Mvc4.dll": {
             "assemblyVersion": "5.2.0.0",
             "fileVersion": "5.2.12.29"
+          }
+        }
+      },
+      "Rotativa/1.7.3": {
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "5.2.3"
+        },
+        "runtime": {
+          "lib/net461/Rotativa.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -3242,19 +3274,19 @@
       "path": "messagepackanalyzer/2.1.152",
       "hashPath": "messagepackanalyzer.2.1.152.nupkg.sha512"
     },
-    "Microsoft.AspNet.Mvc/4.0.40804": {
+    "Microsoft.AspNet.Mvc/5.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tQrw7I+Ol1Kr3kDKcA0XNT68ctjciLIUZqGtMBk7fNjEGUUVDifwlOJJXUBQxUayv4aHwB+OOiPFF3ZD6VXmRw==",
-      "path": "microsoft.aspnet.mvc/4.0.40804",
-      "hashPath": "microsoft.aspnet.mvc.4.0.40804.nupkg.sha512"
+      "sha512": "sha512-i8jZf5QrbcFmjiYWRD7o7qTak/oXKxV80MgP4cZ33A8GC0RBtBIdZ1VHaloGUg+qsHUz5rVkGpwenM+ugDz5PA==",
+      "path": "microsoft.aspnet.mvc/5.2.3",
+      "hashPath": "microsoft.aspnet.mvc.5.2.3.nupkg.sha512"
     },
-    "Microsoft.AspNet.Razor/2.0.20710": {
+    "Microsoft.AspNet.Razor/3.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JkaLdzjXnjcd8JAaAAtahMtqORdBfX2pOlVdv7khq2hKBLqjdP+5q2LVLmbLecFGxoW9inDNjZKvwdVuiwFbZg==",
-      "path": "microsoft.aspnet.razor/2.0.20710",
-      "hashPath": "microsoft.aspnet.razor.2.0.20710.nupkg.sha512"
+      "sha512": "sha512-leta+Q73O7+pR8ThTqXmwaNMSqwZQQ3BHfpUHd8S1XaUWe1jRVLitMHqo1AmY7wPNLyankPA1beiUKEGj8Q3Dw==",
+      "path": "microsoft.aspnet.razor/3.2.3",
+      "hashPath": "microsoft.aspnet.razor.3.2.3.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.9": {
       "type": "package",
@@ -3263,12 +3295,12 @@
       "path": "microsoft.aspnet.webapi.client/5.2.9",
       "hashPath": "microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512"
     },
-    "Microsoft.AspNet.WebPages/2.0.20710": {
+    "Microsoft.AspNet.WebPages/3.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bpWbVKW0RpM/XtTwZL7pjhuVqpaB/cHutR7W4YXLIXFMHHXilqzVxpFmyzwoIZVO1xmSdoelbDRBncIA5D24EA==",
-      "path": "microsoft.aspnet.webpages/2.0.20710",
-      "hashPath": "microsoft.aspnet.webpages.2.0.20710.nupkg.sha512"
+      "sha512": "sha512-zbtxBERla5RE/mhftwbrXOzc0r6lh8WcnjpGW7QQe+PvSDDx1BgsTUGzfCXO/vJznHNpY5oCSYLt8Q5vUu7F0g==",
+      "path": "microsoft.aspnet.webpages/3.2.3",
+      "hashPath": "microsoft.aspnet.webpages.3.2.3.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.21": {
       "type": "package",
@@ -3816,6 +3848,20 @@
       "path": "nuget.versioning/6.6.1",
       "hashPath": "nuget.versioning.6.6.1.nupkg.sha512"
     },
+    "PagedList/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ou6F3WKXh49hOo0TxWM+SkIGuKllYPuPPvnSYOlQ1sTrtuEyuDUhYbSJd5Sdb06i/sWUJZTjiUecEs3Ht/Hx3g==",
+      "path": "pagedlist/1.17.0",
+      "hashPath": "pagedlist.1.17.0.nupkg.sha512"
+    },
+    "PagedList.Mvc/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D0M4qW2g4a9cwG8ozIKUnJheCrm5GpFTceqUl63AXWaAVnTgk+TysZYUOGMsBRuzid8aF+/E8b0bXM6+90jiEw==",
+      "path": "pagedlist.mvc/4.5.0",
+      "hashPath": "pagedlist.mvc.4.5.0.nupkg.sha512"
+    },
     "React.Core/5.2.12": {
       "type": "package",
       "serviceable": true,
@@ -3836,6 +3882,13 @@
       "sha512": "sha512-x+6Tt3bTXU9JQxthBl41fMy6ukNyiQrJQQPYaT62qGDFs0Lk9lZGs3hpE5INVfPXxDYYf67hUvbuK5aLKiVEjw==",
       "path": "react.web.mvc4/5.2.12",
       "hashPath": "react.web.mvc4.5.2.12.nupkg.sha512"
+    },
+    "Rotativa/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MdLzud1Tt9JYLG3aNZHQcEITbT2r829rZAm96iLZAUlilXTsZkReKzyfjaIfwDZ9+++TRUKwWPKjI+WPHVz0ZA==",
+      "path": "rotativa/1.7.3",
+      "hashPath": "rotativa.1.7.3.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

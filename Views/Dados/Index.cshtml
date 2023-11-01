@@ -32,11 +32,7 @@
 
     <h1>Relatório dos Transportadores</h1>
     <h5>Quantidade de transportadores registrados: @QtdUsers </h5>
-<a href="@Url.Action("GerarRelatorioPDF", "Relatorios")">Gerar Relatório PDF</a>
-@using (Html.BeginForm("GerarRelatorioPDF", "Dados"))
-{
-    <input type="submit" value="Gerar Relatório PDF" />
-}
+
         <a href="@Url.Action("DownloadRelatorio", "Dados")">
 
         <button type="button" class="btn btn-outline-danger">

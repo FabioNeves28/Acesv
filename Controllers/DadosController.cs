@@ -27,7 +27,7 @@ namespace Acesvv.Controllers
 
         }
 
-    
+
 
 
 
@@ -36,92 +36,112 @@ namespace Acesvv.Controllers
 
         public ActionResult DownloadRelatorio()
         {
-            using (MemoryStream memoryStream = new MemoryStream())
+            using (var db = new BD())
             {
-                // Criação do documento PDF
-                Document document = new Document();
-                PdfWriter writer = PdfWriter.GetInstance(document, memoryStream);
-                document.Open();
+                var dados = db.Dados.Include(d => d.Escola).ToList();
 
-                // Criação da tabela com espaçamento entre as células
-                PdfPTable table = new PdfPTable(17);
-                table.WidthPercentage = 200; // Aumente a largura da tabela
+                Document doc = new Document();
+                MemoryStream ms = new MemoryStream();
+                PdfWriter writer = PdfWriter.GetInstance(doc, ms);
 
-                // Defina a largura das colunas
+                doc.Open();
 
-                // Adicione os campos do modelo à tabela como colunas
-                table.AddCell("EscolaId");
-                table.AddCell("Nome Completo");
-                table.AddCell("Telefone");
-                table.AddCell("Placa");
-                table.AddCell("Apelido");
-                table.AddCell("CPF");
-                table.AddCell("Data de Nascimento");
-                table.AddCell("Prefixo");
-                table.AddCell("Bairros");
-                table.AddCell("Veiculo");
-                table.AddCell("CNH");
-                table.AddCell("Validade");
-                table.AddCell("Endereço");
-                table.AddCell("Bairro");
-                table.AddCell("CEP");
-                table.AddCell("Número");
-                table.AddCell("Complemento");
+                var mapeamentoCampos = new Dictionary<string, string>
+        {
+            { "Escolas", "EscolaId" },
+            { "Nome Completo", "NomeCompleto" },
+            { "Telefone", "Telefone" },
+            { "Placa", "Placa" },
+            { "Apelido", "Apelido" },
+            { "CPF", "Cpf" },
+            { "Data de Nascimento", "Data_Nascimento" },
+            { "Prefixo", "Prefixo" },
+            { "Bairros", "Bairros" },
+            { "Veículo", "Veiculo" },
+            { "Ano", "Ano" },
+            { "CNH", "Cnh" },
+            { "Categoria", "CategoriaSelecionada" },
+            { "Validade", "Validade" },
+            { "Endereço", "Endereco" },
+            { "Bairro", "Bairro" },
+            { "CEP", "Cep" },
+            { "Número", "Número" },
+            { "Complemento", "Complemento" }
+        };
 
-                foreach (var dados in _context.Dados.Include(d => d.Escola).ToList())
+                var headerFont = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, BaseColor.WHITE);
+                var cellFont = new Font(Font.FontFamily.HELVETICA, 12, Font.NORMAL, BaseColor.BLACK);
+                var headerBackgroundColor = new BaseColor(0, 156, 220); // Cor de fundo azul claro
+              
+                foreach (var dado in dados)
                 {
-                    // Adicione os valores dos campos como células na tabela
-                    table.AddCell(dados.EscolasSelecionadas);
-                    table.AddCell(dados.NomeCompleto);
-                    table.AddCell(dados.Telefone);
-                    table.AddCell(dados.Placa);
-                    table.AddCell(dados.Apelido);
-                    table.AddCell(dados.Cpf);
-                    table.AddCell(dados.Data_Nascimento.ToString());
-                    table.AddCell(dados.Prefixo);
-                    table.AddCell(dados.Bairros);
-                    table.AddCell(dados.Veiculo);
-                    table.AddCell(dados.Cnh);
-                    table.AddCell(dados.Validade.ToString());
-                    table.AddCell(dados.Endereco);
-                    table.AddCell(dados.Bairro);
-                    table.AddCell(dados.Cep);
-                    table.AddCell(dados.Número);
-                    table.AddCell(dados.Complemento);
+                    PdfPTable table = new PdfPTable(2);
+                    float[] columnWidths = new float[] { 2f, 4f };
+                    table.SetWidths(columnWidths);
+
+                    foreach (var colunaPersonalizada in mapeamentoCampos)
+                    {
+                        var nomeColuna = colunaPersonalizada.Key;
+                        var nomePropriedade = colunaPersonalizada.Value;
+
+                        string valor = nomePropriedade == "EscolaId" ? GetEscolasSelecionadas(dado.EscolaId) : GetValorCampo(dado, nomePropriedade);
+
+
+                        PdfPCell headerCell = new PdfPCell(new Phrase(nomeColuna, headerFont));
+                        headerCell.BackgroundColor = headerBackgroundColor;
+                        table.AddCell(headerCell);
+
+                        PdfPCell cell = new PdfPCell(new Phrase(valor, cellFont));
+                        table.AddCell(cell);
+                    }
+
+
+                    doc.Add(table);
+                    doc.NewPage(); // Adiciona uma nova página para o próximo registro
                 }
 
-                // Adicione a tabela final à última página
-                document.Add(table);
+                doc.Close();
 
-                document.Close();
+                byte[] pdfData = ms.ToArray();
 
-                // Converte o documento em bytes
-                byte[] fileBytes = memoryStream.ToArray();
-
-                // Aplicar a configuração de zoom com PdfStamper
-                using (MemoryStream finalMemoryStream = new MemoryStream())
-                {
-                    PdfReader reader = new PdfReader(fileBytes);
-                    PdfStamper stamper = new PdfStamper(reader, finalMemoryStream);
-
-                    PdfDestination pdfDest = new PdfDestination(PdfDestination.XYZ, 0, reader.GetPageSize(1).Height, 0.75f);
-                    PdfAction action = PdfAction.GotoLocalPage(1, pdfDest, stamper.Writer);
-                    stamper.Writer.SetOpenAction(action);
-                    stamper.Close();
-
-                    // Retorna o arquivo PDF como resultado para download
-                    byte[] finalFileBytes = finalMemoryStream.ToArray();
-                    return File(finalFileBytes, "application/pdf", "relatorio.pdf");
-                }
+                return File(pdfData, "application/pdf", "Dados.pdf");
             }
         }
 
 
 
+        string GetValorCampo(object obj, string fieldName)
+        {
+            var propInfo = obj.GetType().GetProperty(fieldName);
+            if (propInfo != null)
+            {
+                var value = propInfo.GetValue(obj, null);
+                if (value != null)
+                {
+                    return value.ToString();
+                }
+            }
+            return string.Empty;
+        }
 
+        string GetEscolasSelecionadas(List<int> escolaIds)
+        {
+            if (escolaIds == null)
+            {
+                return "Nennhuma escola encontrada";
+            }
 
-
-
+            var escolasSelecionadas = new List<string>();
+            foreach (var escolaId in escolaIds)
+            {
+                var escola = _context.Escolas.Find(escolaId);
+                if (escola != null)
+                {
+                    escolasSelecionadas.Add(escola.NomeEscola);
+                }
+            }
+            return string.Join(", ", escolasSelecionadas);
+        }
 
 
 
@@ -132,22 +152,22 @@ namespace Acesvv.Controllers
             // Percorra a lista de dados
             foreach (var dado in dados)
             {
-                // Verifique se a lista de EscolaId não está vazia
-                if (dado.EscolaId != null && dado.EscolaId.Count > 0)
-                {
-                    // Crie uma lista para armazenar os nomes das escolas selecionadas
-                    var escolasSelecionadas = new List<string>();
-
-                    // Percorra os IDs das escolas selecionadas
-                    foreach (var escolaId in dado.EscolaId)
+                    // Verifique se a lista de EscolaId não está vazia
+                    if (dado.EscolaId != null && dado.EscolaId.Count > 0)
                     {
-                        // Encontre a escola correspondente com base no ID e adicione o nome à lista
-                        var escola = await _context.Escolas.FindAsync(escolaId);
-                        if (escola != null)
+                        // Crie uma lista para armazenar os nomes das escolas selecionadas
+                        var escolasSelecionadas = new List<string>();
+
+                        // Percorra os IDs das escolas selecionadas
+                        foreach (var escolaId in dado.EscolaId)
                         {
-                            escolasSelecionadas.Add(escola.NomeEscola);
+                            // Encontre a escola correspondente com base no ID e adicione o nome à lista
+                            var escola = await _context.Escolas.FindAsync(escolaId);
+                            if (escola != null)
+                            {
+                                escolasSelecionadas.Add(escola.NomeEscola);
+                            }
                         }
-                    }
 
                     // Concatene os nomes das escolas separados por vírgula e defina a propriedade adicional no modelo
                     dado.EscolasSelecionadas = string.Join(", ", escolasSelecionadas);
