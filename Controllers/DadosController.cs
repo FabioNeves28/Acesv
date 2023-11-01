@@ -38,7 +38,7 @@ namespace Acesvv.Controllers
         {
             using (var db = new BD())
             {
-                var dados = db.Dados.ToList();
+                var dados = db.Dados.Include(d => d.Escola).ToList();
 
                 Document doc = new Document();
                 MemoryStream ms = new MemoryStream();
@@ -62,7 +62,7 @@ namespace Acesvv.Controllers
                 {
                     foreach (var campo in campos)
                     {
-                        string valor = GetValorCampo(dado, campo);
+                        string valor = campo == "EscolaId" ? GetEscolasSelecionadas(dado.EscolaId) : GetValorCampo(dado, campo);
                         PdfPCell cell = new PdfPCell(new Phrase(campo, new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
                         table.AddCell(cell);
 
@@ -78,28 +78,40 @@ namespace Acesvv.Controllers
 
                 return File(pdfData, "application/pdf", "Dados.pdf");
             }
-
-
-            string GetValorCampo(object obj, string fieldName)
-            {
-                var propInfo = obj.GetType().GetProperty(fieldName);
-                if (propInfo != null)
-                {
-                    var value = propInfo.GetValue(obj, null);
-                    if (value != null)
-                    {
-                        return value.ToString();
-                    }
-                }
-                return string.Empty;
-            }
-
         }
 
+        string GetValorCampo(object obj, string fieldName)
+        {
+            var propInfo = obj.GetType().GetProperty(fieldName);
+            if (propInfo != null)
+            {
+                var value = propInfo.GetValue(obj, null);
+                if (value != null)
+                {
+                    return value.ToString();
+                }
+            }
+            return string.Empty;
+        }
 
+        string GetEscolasSelecionadas(List<int> escolaIds)
+        {
+            if (escolaIds == null)
+            {
+                return "Nennhuma escola foi selecionada pelo transportador."; // Retorna uma string vazia se a lista for nula
+            }
 
-
-
+            var escolasSelecionadas = new List<string>();
+            foreach (var escolaId in escolaIds)
+            {
+                var escola = _context.Escolas.Find(escolaId);
+                if (escola != null)
+                {
+                    escolasSelecionadas.Add(escola.NomeEscola);
+                }
+            }
+            return string.Join(", ", escolasSelecionadas);
+        }
 
 
 
@@ -110,22 +122,22 @@ namespace Acesvv.Controllers
             // Percorra a lista de dados
             foreach (var dado in dados)
             {
-                // Verifique se a lista de EscolaId não está vazia
-                if (dado.EscolaId != null && dado.EscolaId.Count > 0)
-                {
-                    // Crie uma lista para armazenar os nomes das escolas selecionadas
-                    var escolasSelecionadas = new List<string>();
-
-                    // Percorra os IDs das escolas selecionadas
-                    foreach (var escolaId in dado.EscolaId)
+                    // Verifique se a lista de EscolaId não está vazia
+                    if (dado.EscolaId != null && dado.EscolaId.Count > 0)
                     {
-                        // Encontre a escola correspondente com base no ID e adicione o nome à lista
-                        var escola = await _context.Escolas.FindAsync(escolaId);
-                        if (escola != null)
+                        // Crie uma lista para armazenar os nomes das escolas selecionadas
+                        var escolasSelecionadas = new List<string>();
+
+                        // Percorra os IDs das escolas selecionadas
+                        foreach (var escolaId in dado.EscolaId)
                         {
-                            escolasSelecionadas.Add(escola.NomeEscola);
+                            // Encontre a escola correspondente com base no ID e adicione o nome à lista
+                            var escola = await _context.Escolas.FindAsync(escolaId);
+                            if (escola != null)
+                            {
+                                escolasSelecionadas.Add(escola.NomeEscola);
+                            }
                         }
-                    }
 
                     // Concatene os nomes das escolas separados por vírgula e defina a propriedade adicional no modelo
                     dado.EscolasSelecionadas = string.Join(", ", escolasSelecionadas);
