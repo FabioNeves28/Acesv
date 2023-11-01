@@ -1071,3 +1071,6 @@ C:\Users\Fabio\Desktop\Developing\Acesvv\Acesv-main\obj\Debug\net6.0\refint\Aces
 C:\Users\Fabio\Desktop\Developing\Acesvv\Acesv-main\obj\Debug\net6.0\Acesvv.pdb
 C:\Users\Fabio\Desktop\Developing\Acesvv\Acesv-main\obj\Debug\net6.0\Acesvv.genruntimeconfig.cache
 C:\Users\Fabio\Desktop\Developing\Acesvv\Acesv-main\obj\Debug\net6.0\ref\Acesvv.dll
+C:\Users\Fabio\Desktop\Developing\Acesvv\Acesv-main\bin\Debug\net6.0\PagedList.dll
+C:\Users\Fabio\Desktop\Developing\Acesvv\Acesv-main\bin\Debug\net6.0\PagedList.Mvc.dll
+C:\Users\Fabio\Desktop\Developing\Acesvv\Acesv-main\bin\Debug\net6.0\Rotativa.dll

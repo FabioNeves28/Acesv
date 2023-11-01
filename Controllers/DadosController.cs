@@ -27,7 +27,7 @@ namespace Acesvv.Controllers
 
         }
 
-    
+
 
 
 
@@ -36,87 +36,65 @@ namespace Acesvv.Controllers
 
         public ActionResult DownloadRelatorio()
         {
-            using (MemoryStream memoryStream = new MemoryStream())
+            using (var db = new BD())
             {
-                // Criação do documento PDF
-                Document document = new Document();
-                PdfWriter writer = PdfWriter.GetInstance(document, memoryStream);
-                document.Open();
+                var dados = db.Dados.ToList();
 
-                // Criação da tabela com espaçamento entre as células
-                PdfPTable table = new PdfPTable(17);
-                table.WidthPercentage = 200; // Aumente a largura da tabela
+                Document doc = new Document();
+                MemoryStream ms = new MemoryStream();
+                PdfWriter writer = PdfWriter.GetInstance(doc, ms);
 
-                // Defina a largura das colunas
+                doc.Open();
 
-                // Adicione os campos do modelo à tabela como colunas
-                table.AddCell("EscolaId");
-                table.AddCell("Nome Completo");
-                table.AddCell("Telefone");
-                table.AddCell("Placa");
-                table.AddCell("Apelido");
-                table.AddCell("CPF");
-                table.AddCell("Data de Nascimento");
-                table.AddCell("Prefixo");
-                table.AddCell("Bairros");
-                table.AddCell("Veiculo");
-                table.AddCell("CNH");
-                table.AddCell("Validade");
-                table.AddCell("Endereço");
-                table.AddCell("Bairro");
-                table.AddCell("CEP");
-                table.AddCell("Número");
-                table.AddCell("Complemento");
+                PdfPTable table = new PdfPTable(2);
+                float[] columnWidths = new float[] { 2f, 4f };
+                table.SetWidths(columnWidths);
 
-                foreach (var dados in _context.Dados.Include(d => d.Escola).ToList())
+                var campos = new string[]
                 {
-                    // Adicione os valores dos campos como células na tabela
-                    table.AddCell(dados.EscolasSelecionadas);
-                    table.AddCell(dados.NomeCompleto);
-                    table.AddCell(dados.Telefone);
-                    table.AddCell(dados.Placa);
-                    table.AddCell(dados.Apelido);
-                    table.AddCell(dados.Cpf);
-                    table.AddCell(dados.Data_Nascimento.ToString());
-                    table.AddCell(dados.Prefixo);
-                    table.AddCell(dados.Bairros);
-                    table.AddCell(dados.Veiculo);
-                    table.AddCell(dados.Cnh);
-                    table.AddCell(dados.Validade.ToString());
-                    table.AddCell(dados.Endereco);
-                    table.AddCell(dados.Bairro);
-                    table.AddCell(dados.Cep);
-                    table.AddCell(dados.Número);
-                    table.AddCell(dados.Complemento);
+            "EscolaId", "NomeCompleto", "Telefone", "Placa", "Apelido",
+            "Cpf", "Data_Nascimento", "Prefixo", "Bairros", "Veiculo",
+            "Ano", "Cnh", "Categoria", "CategoriaSelecionada",
+            "Validade", "Endereco", "Bairro", "Cep", "Número", "Complemento"
+                };
+
+                foreach (var dado in dados)
+                {
+                    foreach (var campo in campos)
+                    {
+                        string valor = GetValorCampo(dado, campo);
+                        PdfPCell cell = new PdfPCell(new Phrase(campo, new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
+                        table.AddCell(cell);
+
+                        cell = new PdfPCell(new Phrase(valor, new Font(Font.FontFamily.HELVETICA, 12)));
+                        table.AddCell(cell);
+                    }
                 }
 
-                // Adicione a tabela final à última página
-                document.Add(table);
+                doc.Add(table);
+                doc.Close();
 
-                document.Close();
+                byte[] pdfData = ms.ToArray();
 
-                // Converte o documento em bytes
-                byte[] fileBytes = memoryStream.ToArray();
-
-                // Aplicar a configuração de zoom com PdfStamper
-                using (MemoryStream finalMemoryStream = new MemoryStream())
-                {
-                    PdfReader reader = new PdfReader(fileBytes);
-                    PdfStamper stamper = new PdfStamper(reader, finalMemoryStream);
-
-                    PdfDestination pdfDest = new PdfDestination(PdfDestination.XYZ, 0, reader.GetPageSize(1).Height, 0.75f);
-                    PdfAction action = PdfAction.GotoLocalPage(1, pdfDest, stamper.Writer);
-                    stamper.Writer.SetOpenAction(action);
-                    stamper.Close();
-
-                    // Retorna o arquivo PDF como resultado para download
-                    byte[] finalFileBytes = finalMemoryStream.ToArray();
-                    return File(finalFileBytes, "application/pdf", "relatorio.pdf");
-                }
+                return File(pdfData, "application/pdf", "Dados.pdf");
             }
+
+
+            string GetValorCampo(object obj, string fieldName)
+            {
+                var propInfo = obj.GetType().GetProperty(fieldName);
+                if (propInfo != null)
+                {
+                    var value = propInfo.GetValue(obj, null);
+                    if (value != null)
+                    {
+                        return value.ToString();
+                    }
+                }
+                return string.Empty;
+            }
+
         }
-
-
 
 
 
