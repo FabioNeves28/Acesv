@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Acesvv.Data;
 
 namespace Acesvv.Areas.Identity.Pages.Account
 {
@@ -83,6 +84,7 @@ namespace Acesvv.Areas.Identity.Pages.Account
             /// </summary>
             [Display(Name = "Remember me?")]
             public bool RememberMe { get; set; }
+            public object Chave_ADM { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -104,7 +106,6 @@ namespace Acesvv.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            var chave_adm = Input.Email;
             var returnUrlAdm = Url.Content("~/Home/Privacy");
             returnUrl ??= Url.Content("~/");
 
@@ -112,19 +113,18 @@ namespace Acesvv.Areas.Identity.Pages.Account
 
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
-                if (chave_adm == "fabioalvesneves@gmail.com")
-                {
-                    _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrlAdm);
 
-                }
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    if (1 == 1) // Verifique seu critério aqui
+                    {
+                        return LocalRedirect(returnUrlAdm);
+                    }
+                   
+                        return LocalRedirect(returnUrl);
+                    
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -142,8 +142,9 @@ namespace Acesvv.Areas.Identity.Pages.Account
                 }
             }
 
-            // If we got this far, something failed, redisplay form
+            // Se chegamos até aqui, algo deu errado, exibir o formulário novamente
             return Page();
         }
+
     }
 }
