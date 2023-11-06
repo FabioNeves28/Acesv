@@ -94,64 +94,106 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
-        
-    // Obtém o email do usuário logado
-    var userEmail = User.Identity.Name;
 
-    // Executa a consulta SQL para obter o valor do campo EditId
-    var editId = "";
-    using (var connection = new SqlConnection(@"Data Source=DESKTOP-3QU9K7J\SQLEXPRESS; Initial Catalog=Dados;Integrated Security=True;"))
-    {
-        connection.Open();
+        // Obtém o email do usuário logado
+        var userEmail = User.Identity.Name;
 
-        // Consulta SQL para obter o CPF do usuário logado com base no email
-        var queryCpf = "SELECT Cpf FROM AspNetUsers WHERE UserName = @UserEmail";
-        using (var commandCpf = new SqlCommand(queryCpf, connection))
+        // Executa a consulta SQL para obter o valor do campo EditId
+        var editId = "";
+        using (var connection = new SqlConnection(@"Data Source=DESKTOP-3QU9K7J\SQLEXPRESS; Initial Catalog=Dados;Integrated Security=True;"))
         {
-            commandCpf.Parameters.AddWithValue("@UserEmail", userEmail);
-            var cpfResult = commandCpf.ExecuteScalar();
-            if (cpfResult != null)
-            {
-                var userCpf = cpfResult.ToString();
+            connection.Open();
 
-                // Consulta SQL para obter o EditId com base no CPF do usuário logado
-                var queryEditId = "SELECT Id FROM Dados WHERE Cpf = @UserCpf";
-                using (var commandEditId = new SqlCommand(queryEditId, connection))
+            // Consulta SQL para obter o CPF do usuário logado com base no email
+            var queryCpf = "SELECT Cpf FROM AspNetUsers WHERE UserName = @UserEmail";
+            string chaveADM = null;
+            using (var commandCpf = new SqlCommand(queryCpf, connection))
+            {
+                commandCpf.Parameters.AddWithValue("@UserEmail", userEmail);
+                var cpfResult = commandCpf.ExecuteScalar();
+                if (cpfResult != null)
                 {
-                    commandEditId.Parameters.AddWithValue("@UserCpf", userCpf);
-                    var editIdResult = commandEditId.ExecuteScalar();
-                    if (editIdResult != null)
+                    var userCpf = cpfResult.ToString();
+
+                    // Consulta SQL para obter o EditId com base no CPF do usuário logado
+                    var queryEditId = "SELECT Id FROM Dados WHERE Cpf = @UserCpf";
+                    using (var commandEditId = new SqlCommand(queryEditId, connection))
                     {
-                        editId = editIdResult.ToString();
+                        commandEditId.Parameters.AddWithValue("@UserCpf", userCpf);
+                        var editIdResult = commandEditId.ExecuteScalar();
+                        if (editIdResult != null)
+                        {
+                            editId = editIdResult.ToString();
+                        }
+                    }
+
+
+
+
+                    var queryChaveADM = "SELECT Chave_ADM FROM AspNetUsers WHERE Cpf = @UserCpf"; // Substitua "SuaTabelaDeUsuarios" pelo nome correto da tabela    
+                    using (var commandChaveADM = new SqlCommand(queryChaveADM, connection))
+                    {
+                        commandChaveADM.Parameters.AddWithValue("@UserCpf", userCpf);
+                        var chaveADMResult = commandChaveADM.ExecuteScalar();
+                        if (chaveADMResult != null)
+                        {
+                            chaveADM = chaveADMResult.ToString();
+                        }
                     }
                 }
+
             }
+            @if (chaveADM == "1")
+            
+                {
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png" width="30" height="30"><button onclick="myFunction()" class="dropbtn">  Conta</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Configurações"><img src="https://cdn-icons-png.flaticon.com/512/3524/3524752.png" width="20" height="20">   Configurações</a>
+
+                            <a id="manage" class="nav-link text-dark" asp-controller="Dados" asp-action="Create" title="Preenchiento dos Dados"><img src="https://cdn-icons-png.flaticon.com/512/4838/4838646.png" width="20" height="20">   Preenchimento de dados</a>
+
+                            <a href="@Url.Action("Edit", "Dados", new { id = editId })" class="nav-link text-dark" title="Atualizar Dados">
+
+
+
+                                <img src="https://cdn-icons-png.flaticon.com/512/159/159612.png" width="20" height="20"> Atualizar dados
+                            </a>
+
+                            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button id="logout" type="submit" class="nav-link btn btn-link text-dark"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png" width="20" height="20"> Sair</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </li>
+            }
+            else{
+            <li class="nav-item">
+                    <div class="dropdown">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png" width="30" height="30"><button onclick="myFunction()" class="dropbtn">  Conta</button>
+                        <div id="myDropdown" class="dropdown-content">
+
+
+                            <a id="manage" class="nav-link text-dark" asp-controller="Dados" asp-action="Create" title="Preenchiento dos Dados"><img src="https://cdn-icons-png.flaticon.com/512/4838/4838646.png" width="20" height="20">   Preenchimento de dados</a>
+
+                            <a href="@Url.Action("Edit", "Dados", new { id = editId })" class="nav-link text-dark" title="Atualizar Dados">
+
+
+
+                                <img src="https://cdn-icons-png.flaticon.com/512/159/159612.png" width="20" height="20"> Atualizar dados
+                            </a>
+
+                            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button id="logout" type="submit" class="nav-link btn btn-link text-dark"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png" width="20" height="20"> Sair</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </li>
+                }
         }
-    }
-
-        <li class="nav-item">
-            <div class="dropdown">
-                <img src="https://cdn-icons-png.flaticon.com/512/3106/3106921.png" width="30" height="30"><button onclick="myFunction()" class="dropbtn">  Conta</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Configurações"><img src="https://cdn-icons-png.flaticon.com/512/3524/3524752.png" width="20" height="20">   Configurações</a>
-
-                    <a id="manage" class="nav-link text-dark" asp-controller="Dados" asp-action="Create" title="Preenchiento dos Dados"><img src="https://cdn-icons-png.flaticon.com/512/4838/4838646.png" width="20" height="20">   Preenchimento de dados</a>
-                   
-                        <a href="@Url.Action("Edit", "Dados", new { id = editId })" class="nav-link text-dark" title="Atualizar Dados">
-                    
-                       
-
-                        <img src="https://cdn-icons-png.flaticon.com/512/159/159612.png" width="20" height="20"> Atualizar dados
-                    </a>
-
-                    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                        <button id="logout" type="submit" class="nav-link btn btn-link text-dark"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png" width="20" height="20"> Sair</button>
-                    </form>
-
-                </div>
-            </div>
-        </li>
-
     }
     else
     {
@@ -163,4 +205,5 @@
             <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
         </li>
     }
+    
 </ul>

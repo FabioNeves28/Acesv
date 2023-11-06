@@ -104,28 +104,31 @@ namespace Acesvv.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
-        {
-            var returnUrlAdm = Url.Content("~/Home/Privacy");
-            returnUrl ??= Url.Content("~/");
-
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-
-            if (ModelState.IsValid)
+            public async Task<IActionResult> OnPostAsync(string returnUrl = null)
             {
+                var returnUrlAdm = Url.Content("~/Home/Privacy");
+                returnUrl ??= Url.Content("~/");
+
+                ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
+                if (ModelState.IsValid)
+                {
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                // Encontre o usuário pelo e-mail
+                var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email); // Encontre o usuário pelo e-mail
+
+                if (user.Chave_ADM == 1) // Verifique se o usuário tem Chave_ADM igual a 1
+                {
+                    returnUrl = Url.Content("~/Home/Privacy");
+                }
+
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    if (1 == 1) // Verifique seu critério aqui
-                    {
-                        return LocalRedirect(returnUrlAdm);
-                    }
-                   
-                        return LocalRedirect(returnUrl);
-                    
+                    return LocalRedirect(returnUrl);
                 }
+            
                 if (result.RequiresTwoFactor)
                 {
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
