@@ -15,27 +15,29 @@ using System.Security.Claims;
 using Acesvv.Models;
 using Acesvv.Data;
 using SendGrid.Helpers.Mail;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Data.SqlClient;
 
 namespace Acesvv.Controllers
 {
     public class DadosController : Controller
     {
         private readonly BD _context;
-        public DadosController(BD dadosContext)
+        private readonly ChaveADMRequirement _chaveADMRequirement;
+
+        public DadosController(BD dadosContext, ChaveADMRequirement chaveADMRequirement)
         {
             _context = dadosContext;
-
+            _chaveADMRequirement = chaveADMRequirement;
         }
 
 
-
-
-
-
-
-
-        public ActionResult DownloadRelatorio()
+        [Authorize(Policy = "ChaveADM")]
+       
+    public ActionResult DownloadRelatorio()
         {
+           
+           
             using (var db = new BD())
             {
                 var dados = db.Dados.Include(d => d.Escola).ToList();
@@ -144,9 +146,14 @@ namespace Acesvv.Controllers
         }
 
 
-
+        // GET: Dados/Index
         public async Task<IActionResult> Index()
         {
+            int chaveADM = _chaveADMRequirement.Chama_ChaveADM();
+            if (chaveADM == 0)
+            {
+                return Unauthorized();
+            }
             var dados = await _context.Dados.Include(d => d.Escola).ToListAsync();
 
             // Percorra a lista de dados

@@ -16,11 +16,13 @@ builder.Services.AddDbContext<AcesvvContext>(options =>
 builder.Services.AddDefaultIdentity<UsuarioModel>(options => options.SignIn.RequireConfirmedAccount = false)
 .AddEntityFrameworkStores<AcesvvContext>();
 
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BD>();
+builder.Services.AddScoped<ChaveADMRequirement>();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
