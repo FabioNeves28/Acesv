@@ -21,6 +21,6 @@ public class UsuarioModel : IdentityUser
    
     [MaxLength(11, ErrorMessage = "O tamanho máximo do campo {0} é de (1) caracteres")]
     public string Cpf { get; set; }
-
+    public int? Chave_ADM { get;  set; }
 }
 
