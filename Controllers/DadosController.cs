@@ -23,16 +23,18 @@ namespace Acesvv.Controllers
     public class DadosController : Controller
     {
         private readonly BD _context;
-        private readonly ChaveADMRequirement _chaveADMRequirement;
+        private readonly AcesvvContext _acesvvContext;
+        private readonly ChaveADMService _chaveADMService;
 
-        public DadosController(BD dadosContext, ChaveADMRequirement chaveADMRequirement)
+        public DadosController(BD dadosContext, AcesvvContext acesvvContext, ChaveADMService chaveADMService)
         {
             _context = dadosContext;
-            _chaveADMRequirement = chaveADMRequirement;
+            _acesvvContext = acesvvContext;
+            _chaveADMService = chaveADMService;
         }
 
 
-        [Authorize(Policy = "ChaveADM")]
+      
        
     public ActionResult DownloadRelatorio()
         {
@@ -145,15 +147,21 @@ namespace Acesvv.Controllers
             return string.Join(", ", escolasSelecionadas);
         }
 
-
+       
         // GET: Dados/Index
         public async Task<IActionResult> Index()
         {
-            int chaveADM = _chaveADMRequirement.Chama_ChaveADM();
-            if (chaveADM == 0)
+
+            try
+            {
+               await _chaveADMService.CheckChaveADM(1); // Verificar se Chave_ADM não é igual a 1
+                                                   // Resto da lógica da ação
+            }
+            catch (UnauthorizedAccessException)
             {
                 return Unauthorized();
             }
+            
             var dados = await _context.Dados.Include(d => d.Escola).ToListAsync();
 
             // Percorra a lista de dados

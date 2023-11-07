@@ -6,6 +6,9 @@ using Acesv2.Models;
 using System.Configuration;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Acesvv.Models;
+using Microsoft.AspNetCore.Authorization;
+using Acesvv;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AcesvvContextConnection") ?? throw new InvalidOperationException("Connection string 'AcesvvContextConnection' not found.");
@@ -19,7 +22,9 @@ builder.Services.AddDefaultIdentity<UsuarioModel>(options => options.SignIn.Requ
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BD>();
-builder.Services.AddScoped<ChaveADMRequirement>();
+builder.Services.AddScoped<ChaveADMService>();
+
+
 
 var app = builder.Build();
 
