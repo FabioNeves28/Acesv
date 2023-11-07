@@ -22,7 +22,7 @@ builder.Services.AddDefaultIdentity<UsuarioModel>(options => options.SignIn.Requ
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BD>();
-
+builder.Services.AddScoped<ChaveADMService>();
 
 
 

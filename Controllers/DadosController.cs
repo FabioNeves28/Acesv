@@ -24,11 +24,13 @@ namespace Acesvv.Controllers
     {
         private readonly BD _context;
         private readonly AcesvvContext _acesvvContext;
+        private readonly ChaveADMService _chaveADMService;
 
-        public DadosController(BD dadosContext, AcesvvContext acesvvContext)
+        public DadosController(BD dadosContext, AcesvvContext acesvvContext, ChaveADMService chaveADMService)
         {
             _context = dadosContext;
             _acesvvContext = acesvvContext;
+            _chaveADMService = chaveADMService;
         }
 
 
@@ -149,28 +151,17 @@ namespace Acesvv.Controllers
         // GET: Dados/Index
         public async Task<IActionResult> Index()
         {
-            if (User.Identity.IsAuthenticated)
+
+            try
             {
-                // Obtenha o ID do usuário atual
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-                // Consulte o banco de dados para obter o valor da coluna Chave_ADM para o usuário atual
-                var chaveADM = await _acesvvContext.Users
-                    .Where(user => user.Id == userId)
-                    .Select(user => user.Chave_ADM)
-                    .FirstOrDefaultAsync();
-
-                // Verifique o valor da coluna Chave_ADM
-                if (chaveADM != 1)
-                {
-                    // Usuário não autorizado
-                    return Unauthorized();
-                }
+               await _chaveADMService.CheckChaveADM(1); // Verificar se Chave_ADM não é igual a 1
+                                                   // Resto da lógica da ação
             }
-            var usuariosComChaveADM = await _acesvvContext.Users
-      .Where(user => user.Chave_ADM != null) // Filtre os usuários onde a coluna Chave_ADM não é nula
-      .Select(user => user.Chave_ADM) // Selecione a coluna Chave_ADM
-      .ToListAsync();
+            catch (UnauthorizedAccessException)
+            {
+                return Unauthorized();
+            }
+            
             var dados = await _context.Dados.Include(d => d.Escola).ToListAsync();
 
             // Percorra a lista de dados

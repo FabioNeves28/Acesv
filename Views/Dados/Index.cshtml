@@ -25,17 +25,6 @@
                 QtdUsers = qtdResult.ToString();
             }
         }
-
-        // Consulta SQL para obter o valor da coluna "Chave_ADM" na tabela "AspNetUsers"
-        var queryChaveADM = "SELECT Chave_ADM FROM AspNetUsers";
-        using (var commandChaveADM = new SqlCommand(queryChaveADM, connection))
-        {
-            var chaveADMResult = commandChaveADM.ExecuteScalar();
-            if (chaveADMResult != null)
-            {
-                ChaveADM = chaveADMResult.ToString();
-            }
-        }
     }
 
     }
@@ -44,7 +33,7 @@
 
     <h1>Relatório dos Transportadores</h1>
     <h5>Quantidade de transportadores registrados: @QtdUsers </h5>
-    <h6>Chave adm: @ChaveADM</h6>
+   
         <a href="@Url.Action("DownloadRelatorio", "Dados")">
 
         <button type="button" class="btn btn-outline-danger">

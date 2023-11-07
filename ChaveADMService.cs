@@ -15,19 +15,21 @@ public class ChaveADMService
         _userManager = userManager;
     }
 
-    public async Task<bool> IsChaveADMValid(int requiredValue)
+    public async Task CheckChaveADM(int requiredValue)
     {
         if (_httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
         {
             var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = await _userManager.FindByIdAsync(userId);
 
-            if (user != null && user.Chave_ADM != requiredValue)
+            if (user == null || user.Chave_ADM != requiredValue)
             {
-                return true;
+                throw new UnauthorizedAccessException();
             }
         }
-
-        return false;
+        else
+        {
+            throw new UnauthorizedAccessException();
+        }
     }
 }
