@@ -1,5 +1,5 @@
 ﻿    @model IEnumerable<Acesv.Models.Dados>
-  
+    
     @using System.Linq;
     @using Microsoft.Data.SqlClient;
     @{
@@ -8,32 +8,31 @@
     }
     @{
    
-    string QtdUsers = "";
-    string ChaveADM = "";
+        var QtdUsers = "";
 
-    using (var connection = new SqlConnection(@"Data Source=DESKTOP-3QU9K7J\SQLEXPRESS; Initial Catalog=Dados;Integrated Security=True;"))
-    {
-        connection.Open();
+        // Executa a consulta SQL para obter o valor do campo EditId
 
-        // Consulta SQL para obter a contagem de registros na tabela "Dados"
-        var queryQtd = "SELECT COUNT(*) FROM Dados";
-        using (var commandQtd = new SqlCommand(queryQtd, connection))
+        using (var connection = new SqlConnection(@"Data Source=DESKTOP-3QU9K7J\SQLEXPRESS; Initial Catalog=Dados;Integrated Security=True;"))
         {
-            var qtdResult = commandQtd.ExecuteScalar();
-            if (qtdResult != null)
+            connection.Open();
+
+            // Consulta SQL para obter o CPF do usuário logado com base no email
+            var queryQtd = "SELECT COUNT(*) FROM Dados";
+            using (var commandQtd = new SqlCommand(queryQtd, connection))
             {
-                QtdUsers = qtdResult.ToString();
+          
+                var qtdResult = commandQtd.ExecuteScalar();
+                if (qtdResult != null)
+                {
+                    QtdUsers = qtdResult.ToString();
+                }
             }
         }
     }
 
-    }
-
-    
-
     <h1>Relatório dos Transportadores</h1>
     <h5>Quantidade de transportadores registrados: @QtdUsers </h5>
-   
+
         <a href="@Url.Action("DownloadRelatorio", "Dados")">
 
         <button type="button" class="btn btn-outline-danger">

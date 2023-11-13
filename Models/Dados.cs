@@ -18,7 +18,7 @@ namespace Acesv.Models
 
         public int Id { get; set; }
         public List<int> EscolaId { get; set; }
-        
+
         public string Telefone { get; set; }
         public string Placa { get; set; }
         public string NomeCompleto { get; set; }
@@ -40,6 +40,8 @@ namespace Acesv.Models
         public string Cep { get; set; }
         public string Número { get; set; }
         public string Complemento { get; set; }
+
+
         public virtual Escola Escola { get; set; }
         public string EscolasSelecionadas { get; set; }
 

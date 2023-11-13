@@ -11953,11 +11953,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv-main\\Acesvv.csproj",
+      "projectUniqueName": "C:\\Users\\Fabio\\Downloads\\Acesv\\Acesvv.csproj",
       "projectName": "Acesvv",
-      "projectPath": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv-main\\Acesvv.csproj",
+      "projectPath": "C:\\Users\\Fabio\\Downloads\\Acesv\\Acesvv.csproj",
       "packagesPath": "C:\\Users\\Fabio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv-main\\obj\\",
+      "outputPath": "C:\\Users\\Fabio\\Downloads\\Acesv\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",

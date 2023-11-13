@@ -23,18 +23,16 @@ namespace Acesvv.Controllers
     public class DadosController : Controller
     {
         private readonly BD _context;
-        private readonly AcesvvContext _acesvvContext;
-        private readonly ChaveADMService _chaveADMService;
+        private readonly ChaveADMRequirement _chaveADMRequirement;
 
-        public DadosController(BD dadosContext, AcesvvContext acesvvContext, ChaveADMService chaveADMService)
+        public DadosController(BD dadosContext, ChaveADMRequirement chaveADMRequirement)
         {
             _context = dadosContext;
-            _acesvvContext = acesvvContext;
-            _chaveADMService = chaveADMService;
+            _chaveADMRequirement = chaveADMRequirement;
         }
 
 
-      
+        [Authorize(Policy = "ChaveADM")]
        
     public ActionResult DownloadRelatorio()
         {
@@ -147,21 +145,30 @@ namespace Acesvv.Controllers
             return string.Join(", ", escolasSelecionadas);
         }
 
-       
+
         // GET: Dados/Index
         public async Task<IActionResult> Index()
         {
+            ChaveADMRequirement chaveAdm  = new ChaveADMRequirement();
+            if (!User.Identity.IsAuthenticated)
+            {
+                // Se não estiver autenticado, redireciona para uma tela de erro ou retorna uma resposta personalizada
+                string returnUrl = "/Identity/Account/AccessDeniedLogin";
 
-            try
-            {
-               await _chaveADMService.CheckChaveADM(1); // Verificar se Chave_ADM não é igual a 1
-                                                   // Resto da lógica da ação
+                // Redirect to the constructed URL
+                return Redirect(returnUrl); // Substitua "Error" pelo nome da sua view de erro
             }
-            catch (UnauthorizedAccessException)
+            var userEmail = User.Identity.Name;
+            // Chame o método com o email do usuário como argumento
+            string chaveADM = chaveAdm.Chama_ChaveADM(userEmail);
+            if (chaveADM != "1")
             {
-                return Unauthorized();
+                string returnUrl = "/Identity/Account/AccessDenied?ReturnUrl=%2FDados";
+
+                // Redirect to the constructed URL
+                return Redirect(returnUrl);
             }
-            
+
             var dados = await _context.Dados.Include(d => d.Escola).ToListAsync();
 
             // Percorra a lista de dados
