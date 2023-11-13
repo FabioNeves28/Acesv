@@ -48,9 +48,6 @@ namespace Acesvv.Migrations
                     b.Property<string>("Cep")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Chave_ADMId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Cnh")
                         .HasColumnType("nvarchar(max)");
 
@@ -99,8 +96,6 @@ namespace Acesvv.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Chave_ADMId");
-
                     b.HasIndex("EscolaId1");
 
                     b.ToTable("Dados");
@@ -122,84 +117,11 @@ namespace Acesvv.Migrations
                     b.ToTable("Escolas");
                 });
 
-            modelBuilder.Entity("Acesvv.Areas.Identity.Data.UsuarioModel", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Chave_ADM")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Cpf")
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Nome")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Telefone")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UsuarioModel");
-                });
-
             modelBuilder.Entity("Acesv.Models.Dados", b =>
                 {
-                    b.HasOne("Acesvv.Areas.Identity.Data.UsuarioModel", "Chave_ADM")
-                        .WithMany()
-                        .HasForeignKey("Chave_ADMId");
-
                     b.HasOne("Acesv.Models.Escola", "Escola")
                         .WithMany()
                         .HasForeignKey("EscolaId1");
-
-                    b.Navigation("Chave_ADM");
 
                     b.Navigation("Escola");
                 });

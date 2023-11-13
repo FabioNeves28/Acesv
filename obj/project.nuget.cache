@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0ygy+3bzITl+7ifqLWMrUc5s8VFofipc0ASv8L6zJrmxZC7ItBfPpFq/qOdbXK3kUXKAJaUGZbgtmPvYD6VPEQ==",
+  "dgSpecHash": "2fmI5iAfZMmZ60NO1mgQePBVd4dQZe+LxGOBflxIaRe57+ttmJQwwUDakiBICSK0DNc9YmQvlFr25Tj/V6KMLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fabio\\Desktop\\Developing\\Acesvv\\Acesv-main\\Acesvv.csproj",
+  "projectFilePath": "C:\\Users\\Fabio\\Downloads\\Acesv\\Acesvv.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fabio\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
     "C:\\Users\\Fabio\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
