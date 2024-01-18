@@ -17,6 +17,7 @@ using Acesvv.Data;
 using SendGrid.Helpers.Mail;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.WebEncoders.Testing;
 
 namespace Acesvv.Controllers
 {
@@ -32,9 +33,10 @@ namespace Acesvv.Controllers
         }
 
 
-        [Authorize(Policy = "ChaveADM")]
-       
-    public ActionResult DownloadRelatorio()
+  
+
+
+        public ActionResult DownloadRelatorio()
         {
            
            
@@ -68,7 +70,8 @@ namespace Acesvv.Controllers
             { "Bairro", "Bairro" },
             { "CEP", "Cep" },
             { "Número", "Número" },
-            { "Complemento", "Complemento" }
+            { "Complemento", "Complemento" },
+       
         };
 
                 var headerFont = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, BaseColor.WHITE);
