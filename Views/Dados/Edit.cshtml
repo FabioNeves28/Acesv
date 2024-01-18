@@ -104,8 +104,101 @@
         content: attr(data-off);
     }
 
+    /* Add your custom CSS styles here */
+    .row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-md-4 {
+        width: 50%;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .multiselect {
+        position: relative;
+        width: 100%;
+    }
+
+    .selectBox {
+        position: relative;
+    }
+
+        .selectBox select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+    .overSelect {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    #checkboxes {
+        display: none;
+        border: 1px solid #ccc;
+        max-height: 150px;
+        overflow-y: auto;
+    }
+
+        #checkboxes label {
+            display: block;
+            margin: 10px;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* Add more custom styles as needed */
+
 </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    $(document).ready(function () {
+        $('#Cep').on('change', function () {
+            var cep = $(this).val();
+            if (cep.length === 8) {
+                $.ajax({
+                    url: 'https://viacep.com.br/ws/' + cep + '/json/',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#Endereco').val(data.logradouro);
+                        $('#Bairro').val(data.bairro);
+                    },
+                    error: function () {
+                        // Tratar erro, se necessário
+                    }
+                });
+            }
+        });
+    });
     var expanded = false;
 
     function showCheckboxes() {
@@ -132,7 +225,7 @@
 
 </script>
 
-    // Obtém o email do usuário logado
+   
    @{
 
     var userEmail = User.Identity.Name;
