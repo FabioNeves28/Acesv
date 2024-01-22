@@ -303,11 +303,16 @@
                 </div>
             </div>
             <div class="form-group">
-                <label asp-for="Apelido" class="control-label"></label>
-                <input asp-for="Apelido" class="form-control" />
-                <span asp-validation-for="Apelido" class="text-danger"></span>
+                <label class="control-label">Nome Completo</label>
+                <input asp-for="NomeCompleto" placeholder="Insira seu nome completo" class="form-control" required />
+                <span asp-validation-for="NomeCompleto" class="text-danger"></span>
             </div>
-                @if (Chave_ADM != 1)
+            <div class="form-group">
+                <label asp-for="Apelido" class="control-label"></label>
+                <input asp-for="Apelido" placeholder="Ex.: Tio Fulano" class="form-control" required />
+                <span asp-validation-for="Apelido" class="text-danger" placeholder="Ex.: Tio Fulano"></span>
+            </div>
+   @if (Chave_ADM != 1)
                 {
                     <div class="form-group">
 
@@ -328,69 +333,79 @@
                 </div>
             }
             <div class="form-group">
-                <label asp-for="Data_Nascimento" class="control-label"></label>
-                <input asp-for="Data_Nascimento" class="form-control" />
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" oninput="mascara(this, 'tel')" placeholder="Ex.: (13)99123-4567" class="form-control" required />
+                <span asp-validation-for="Telefone" class="text-danger" placeholder="Ex.: Tio Fulano"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data de Nascimento</label>
+                <input asp-for="Data_Nascimento" class="form-control" type="date" />
                 <span asp-validation-for="Data_Nascimento" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Placa" class="control-label"></label>
+                <input asp-for="Placa" oninput="formatPlaca(this)" placeholder="ABC-1234" class="form-control" style="text-transform: uppercase;" required>
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Prefixo" class="control-label"></label>
-                <input asp-for="Prefixo" class="form-control" />
+                <input asp-for="Prefixo" placeholder="Ex.: 07" class="form-control" required />
                 <span asp-validation-for="Prefixo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Bairros" class="control-label"></label>
-                <input asp-for="Bairros" class="form-control" />
+                <input asp-for="Bairros" placeholder="Insira aqui seus bairros separados por vírgula" class="form-control" style="height:100px;" required />
                 <span asp-validation-for="Bairros" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Veiculo" class="control-label"></label>
-                <input asp-for="Veiculo" class="form-control" />
+                <input asp-for="Veiculo" placeholder="Ex.: Sprinter" class="form-control" required />
                 <span asp-validation-for="Veiculo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ano" class="control-label"></label>
-                <input asp-for="Ano" class="form-control" />
+                <input asp-for="Ano" placeholder="Ex.: 2011" class="form-control" />
                 <span asp-validation-for="Ano" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cnh" class="control-label"></label>
-                <input asp-for="Cnh" class="form-control" />
+                <input asp-for="Cnh" placeholder="Número que consta na sua CNH" class=" form-control" maxlength="10" required />
                 <span asp-validation-for="Cnh" class="text-danger"></span>
             </div>
-           <div class="form-group">
-                 <label asp-for="CategoriaSelecionada" class="control-label"></label>
-                <select asp-for="CategoriaSelecionada" class="form-control">
-                    <option value="">Selecione uma categoria</option>
+            <div class="form-group">
+                <label class="control-label">Categoria da CNH</label>
+                <select asp-for="CategoriaSelecionada" class="form-control" required>
+                    <option value="" required>Selecione uma categoria</option>
                     @foreach (var categoria in ViewData["Categorias"] as List<SelectListItem>)
                     {
-                            <option value="@categoria.Value">@categoria.Text</option>
+                        <option value="@categoria.Value" required>@categoria.Text</option>
                     }
-            </select>
+                </select>
                 <span asp-validation-for="CategoriaSelecionada" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Validade" class="control-label"></label>
-                <input asp-for="Validade" class="form-control" />
+                <input asp-for="Validade" class="form-control" type="date" required />
                 <span asp-validation-for="Validade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Endereco" class="control-label"></label>
-                <input asp-for="Endereco" class="form-control" />
+                <label asp-for="Cep" class="control-label"></label>
+                <input asp-for="Cep" placeholder="Ex.: 11350-026" class="form-control" required />
+                <span asp-validation-for="Cep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Endereço</label>
+                <input asp-for="Endereco" class="form-control" required />
                 <span asp-validation-for="Endereco" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Bairro" class="control-label"></label>
-                <input asp-for="Bairro" class="form-control" />
+                <input asp-for="Bairro" class="form-control" required />
                 <span asp-validation-for="Bairro" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cep" class="control-label"></label>
-                <input asp-for="Cep" class="form-control" />
-                <span asp-validation-for="Cep" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Número" class="control-label"></label>
-                <input asp-for="Número" class="form-control" />
+                <input asp-for="Número" placeholder="Insira o número de sua residência" class="form-control" required />
                 <span asp-validation-for="Número" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -398,6 +413,7 @@
                 <input asp-for="Complemento" class="form-control" />
                 <span asp-validation-for="Complemento" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
