@@ -88,7 +88,7 @@
             var rows = table.getElementsByTagName("tr");
 
             for (var i = 0; i < rows.length; i++) {
-                var clienteCell = rows[i].getElementsByTagName("td")[0];
+                var clienteCell = rows[i].getElementsByTagName("td")[1];
                 if (clienteCell) {
                     var cliente = clienteCell.textContent.toLowerCase();
                     if (cliente.includes(filter)) {
