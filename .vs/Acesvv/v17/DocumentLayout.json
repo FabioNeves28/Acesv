@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|c:\\users\\fabio alves\\downloads\\acesv-main\\acesv-main\\views\\financeiro\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|solutionrelative:views\\financeiro\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|c:\\users\\fabio alves\\downloads\\acesv-main\\acesv-main\\models\\financeiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|solutionrelative:models\\financeiro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|c:\\users\\fabio alves\\downloads\\acesv-main\\acesv-main\\controllers\\financeirocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|solutionrelative:controllers\\financeirocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|c:\\users\\fabio alves\\downloads\\acesv-main\\acesv-main\\views\\financeiro\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|solutionrelative:views\\financeiro\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|c:\\users\\fabio alves\\downloads\\acesv-main\\acesv-main\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|c:\\users\\fabio alves\\downloads\\acesv-main\\acesv-main\\models\\dados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|solutionrelative:models\\dados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|c:\\users\\fabio alves\\downloads\\acesv-main\\acesv-main\\views\\viewescola\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|solutionrelative:views\\viewescola\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|c:\\users\\fabio alves\\downloads\\acesv-main\\acesv-main\\migrations\\bdmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EFF5569E-E1AE-4663-909B-0A3D09B684E6}|Acesvv.csproj|solutionrelative:migrations\\bdmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Views\\Financeiro\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Financeiro\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Views\\Financeiro\\Create.cshtml",
+              "RelativeToolTip": "Views\\Financeiro\\Create.cshtml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAB4AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T13:36:52.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FinanceiroController.cs",
+              "DocumentMoniker": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Controllers\\FinanceiroController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FinanceiroController.cs",
+              "ToolTip": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Controllers\\FinanceiroController.cs",
+              "RelativeToolTip": "Controllers\\FinanceiroController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAiwC0AAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "0001-01-01T02:00:00Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Financeiro.cs",
+              "DocumentMoniker": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Models\\Financeiro.cs",
+              "RelativeDocumentMoniker": "Models\\Financeiro.cs",
+              "ToolTip": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Models\\Financeiro.cs",
+              "RelativeToolTip": "Models\\Financeiro.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T17:52:39.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Views\\Financeiro\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Financeiro\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Views\\Financeiro\\Index.cshtml",
+              "RelativeToolTip": "Views\\Financeiro\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAQwE4AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-14T17:10:15.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dados.cs",
+              "DocumentMoniker": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Models\\Dados.cs",
+              "RelativeDocumentMoniker": "Models\\Dados.cs",
+              "ToolTip": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Models\\Dados.cs",
+              "RelativeToolTip": "Models\\Dados.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T12:57:59.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAABwAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T12:17:11.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Views\\ViewEscola\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\ViewEscola\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Views\\ViewEscola\\Index.cshtml",
+              "RelativeToolTip": "Views\\ViewEscola\\Index.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-20T13:10:28.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BDModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Migrations\\BDModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\BDModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Fabio Alves\\Downloads\\Acesv-main\\Acesv-main\\Migrations\\BDModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\BDModelSnapshot.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAAAHUAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T11:53:27.885Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
