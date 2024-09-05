@@ -1,28 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iport-dev\\Downloads\\Acesv-main\\Acesv-main\\Acesvv.csproj": {}
+    "C:\\Users\\Fabio\\source\\repos\\Acesv\\Acesvv.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iport-dev\\Downloads\\Acesv-main\\Acesv-main\\Acesvv.csproj": {
+    "C:\\Users\\Fabio\\source\\repos\\Acesv\\Acesvv.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iport-dev\\Downloads\\Acesv-main\\Acesv-main\\Acesvv.csproj",
+        "projectUniqueName": "C:\\Users\\Fabio\\source\\repos\\Acesv\\Acesvv.csproj",
         "projectName": "Acesvv",
-        "projectPath": "C:\\Users\\iport-dev\\Downloads\\Acesv-main\\Acesv-main\\Acesvv.csproj",
-        "packagesPath": "C:\\Users\\iport-dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iport-dev\\Downloads\\Acesv-main\\Acesv-main\\obj\\",
+        "projectPath": "C:\\Users\\Fabio\\source\\repos\\Acesv\\Acesvv.csproj",
+        "packagesPath": "C:\\Users\\Fabio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Fabio\\Source\\Repos\\Acesv\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\iport-dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
+          "C:\\Users\\Fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
@@ -122,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
